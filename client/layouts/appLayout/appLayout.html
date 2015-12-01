@@ -5,7 +5,7 @@
 
     <!-- {{> yield 'header'}} -->
     <header id="navbarHeader" class="helveticas" style="{{getOpacity}} {{isVisible}} {{getNavWidth}}">
-      <a id="navbarTitle" class="navbarTitle" style="{{isVisible}}">{{getAppTitle}}</a>
+      <a id="navbarTitle" class="navbarTitle" style="{{isVisible}}">{{getTitleText}}</a>
       {{#if breadcrumbsExist}}
         <a id="breadcrumb" class="breadcrumb navbarLink" style="{{isVisible}}"> {{getPageTitle}}</a>
       {{/if}}
