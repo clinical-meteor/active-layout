@@ -1,3 +1,34 @@
+
+/**
+ * @summary Get the application title.
+ * @locus Client, Blaze Template
+ * @memberOf ActiveLayout
+ * @name {{getAppTitle}}
+ * @returns {String}
+ * @version 1.2.3
+ * @example
+ * ```html
+ * <h1>{{getAppTitle}}</h1>
+ * ```
+ */
+
+Template.registerHelper("getAppTitle", function (argument){
+  return Session.get('appTitle');
+});
+
+
+/**
+ * @summary Get the calculated width of the navbar.
+ * @locus Client, Blaze Template
+ * @memberOf ActiveLayout
+ * @name {{getNavWidth}}
+ * @returns {Style}
+ * @version 1.2.3
+ * @example
+ * ```html
+ * <nav style="{{getNavWidth}}"></nav>
+ * ```
+ */
 Template.registerHelper("getNavWidth", function (argument) {
   var width = Session.get('appWidth') - (Session.get('westRule') + Session.get('eastRule'));
   if (Session.get('navIsFullscreen')) {
