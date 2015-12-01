@@ -1,16 +1,11 @@
-<head>
-  <title>CKCC</title>
-</head>
-
-
 
 <template name="appLayout">
 
     {{> yield 'header'}}
 
       {{> errorPanel }}
-      {{> formBuilderPanel }}
       {{> leftDock }}
+      {{> yield 'westPanel' }}
 
       {{> rightDock }}
 
@@ -45,7 +40,6 @@
   {{> collaborationPicklistModal }}
   {{> studiesPicklistModal }}
   {{> metadataPicklistModal }}
-
 </template>
 
 

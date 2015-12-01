@@ -1,12 +1,8 @@
 Package.describe({
   name: 'clinical:active-layout',
-  version: '0.0.1',
-  // Brief, one-line summary of the package.
+  version: '0.0.3',
   summary: 'Layout templates with keybindings and animations.',
-  // URL to the Git repository containing the source code for this package.
   git: 'http://github.com/clinical-meteor/clinical-active-layout',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
 });
 
