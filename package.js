@@ -38,6 +38,8 @@ Package.onUse(function (api) {
   api.export('appLayout');
   api.export('errorPanel');
 
+  api.export('getAppTitle');
+
   api.export('Header');
 
 });
