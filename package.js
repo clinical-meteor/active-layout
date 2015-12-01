@@ -1,6 +1,6 @@
 Package.describe({
   name: 'clinical:active-layout',
-  version: '0.1.1',
+  version: '0.2.0',
   summary: 'Layout templates with keybindings and animations.',
   git: 'http://github.com/clinical-meteor/clinical-active-layout',
   documentation: 'README.md'
@@ -13,6 +13,9 @@ Package.onUse(function (api) {
   api.use('grove:less@0.1.1');
 
   api.use('clinical:router@2.0.13');
+
+  api.use('clinical:extended-api');
+  api.imply('clinical:extended-api');
 
   api.addFiles('client/ui.helpers.js', 'client');
   api.addFiles('client/cardDocks.less', 'client');
