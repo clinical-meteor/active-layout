@@ -15,7 +15,7 @@ Package.onUse(function (api) {
   api.use('clinical:router@2.0.13');
 
   api.use('clinical:extended-api');
-  api.imply('clinical:extended-api');
+  api.imply('clinical:extended-api@0.2.0');
 
   api.addFiles('client/ui.helpers.js', 'client');
   api.addFiles('client/cardDocks.less', 'client');
