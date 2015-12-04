@@ -156,7 +156,7 @@ Template.registerHelper('isRole', function (role) {
  * @locus Client, Blaze Template
  * @memberOf ActiveLayout
  * @name {{getCreatedAt}}
- * @returns {Date String}
+ * @returns {DateString}
  * @version 1.2.3
  * @example
  * ```html
