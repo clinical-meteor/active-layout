@@ -18,13 +18,13 @@ Package.onUse(function (api) {
   api.use('clinical:router@2.0.13');
 
 
-  api.use('clinical:extended-api');
+  api.use('clinical:extended-api@2.1.0');
   api.use('clinical:user-model@1.3.1');
   api.use('clinical:keybindings@1.2.0');
   api.use('clinical:overlays@2.1.8');
 
 
-  api.imply('clinical:extended-api@2.1.0');
+  api.imply('clinical:extended-api');
   api.imply('clinical:keybindings');
   api.imply('clinical:overlays');
 
