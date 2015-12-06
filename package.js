@@ -24,7 +24,7 @@ Package.onUse(function (api) {
   api.use('clinical:overlays@2.1.8');
 
 
-  api.imply('clinical:extended-api');
+  api.imply('clinical:extended-api@2.1.0');
   api.imply('clinical:keybindings');
   api.imply('clinical:overlays');
 
