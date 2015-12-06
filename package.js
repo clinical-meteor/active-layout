@@ -25,13 +25,14 @@ Package.onUse(function (api) {
   api.addFiles('client/objects/Header.js', 'client');
 
   api.addFiles('client/layouts/appLayout/appLayout.html', 'client');
-  api.addFiles('client/layouts/appLayout/appLayout.js', 'client');
-  api.addFiles('client/layouts/appLayout/appLayout.less', 'client');
 
   api.addFiles('client/layouts/appLayout/navbarFooter.js', 'client');
   api.addFiles('client/layouts/appLayout/navbarFooter.less', 'client');
   api.addFiles('client/layouts/appLayout/navbarHeader.js', 'client');
   api.addFiles('client/layouts/appLayout/navbarHeader.less', 'client');
+
+  api.addFiles('client/layouts/appLayout/appLayout.js', 'client');
+  api.addFiles('client/layouts/appLayout/appLayout.less', 'client');
 
   api.addFiles('client/components/errorPanel/errorPanel.html', 'client');
   api.addFiles('client/components/errorPanel/errorPanel.js', 'client');
