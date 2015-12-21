@@ -2,6 +2,8 @@ Header = {};
 
 if (Meteor.isClient) {
   Session.setDefault('HeaderConfig', {
+    hasEntryControls: true,
+    showHelp: true,
     classes: {
       header: "",
       title: "",
