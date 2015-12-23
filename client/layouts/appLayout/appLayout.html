@@ -5,10 +5,10 @@
 
     <!-- {{> yield 'header'}} -->
     <header id="navbarHeader" class="helveticas" style="{{getOpacity}} {{isVisible}} {{getNavWidth}}">
-      <div class="westLinks">
-        <a id="navbarTitle" class="unselectable navbarTitle">{{getTitleText}}</a>
+      <div class="unselectable westLinks">
+        <a id="navbarTitle" class="navbarTitle">{{getTitleText}}</a>
         {{#if breadcrumbsExist}}
-          <a id="breadcrumb" class="unselectable breadcrumb navbarLink" style="{{isVisible}}"> {{getPageTitle}}</a>
+          <a id="breadcrumb" class="breadcrumb navbarLink" style="{{isVisible}}"> {{getPageTitle}}</a>
         {{/if}}
       </div>
 
