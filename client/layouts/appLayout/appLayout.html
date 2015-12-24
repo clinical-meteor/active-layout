@@ -4,7 +4,7 @@
     {{> errorPanel }}
 
     <!-- {{> yield 'header'}} -->
-    <header id="navbarHeader" class="helveticas" style="{{getOpacity}} {{isVisible}} {{getNavWidth}}">
+    <header id="navbarHeader" class="helveticas" style="{{getOpacity}} {{isVisible}} {{getPageWidth}} {{getNavWestRule}}">
       <div class="unselectable westLinks">
         <a id="navbarTitle" class="navbarTitle">{{getTitleText}}</a>
         {{#if breadcrumbsExist}}
@@ -34,7 +34,7 @@
 
       <!-- {{> yield 'sidebar'}} -->
 
-      <div id="mainPanel" class="helveticas layoutPanel" style="{{getLeftPanelStyle}} {{getNorthRule}}">
+      <div id="mainPanel" class="helveticas layoutPanel" style="{{getLeftPanelStyle}} {{getNorthRule}} {{getPageWidth}} {{getWestRule}}">
         {{> yield }}
       </div>
       <div id="secondPanel" class="unselectable helveticas layoutPanel" style="{{getRightPanelStyle}} {{getRightPanelNorthRule}}">
@@ -46,7 +46,7 @@
 
 
     <!-- {{> yield 'footer'}} -->
-    <footer id="navbarFooter" class="unselectable" style="{{getOpacity}} {{getFooterHeight}} {{getNavWidth}}">
+    <footer id="navbarFooter" class="unselectable" style="{{getOpacity}} {{getFooterHeight}} {{getPageWidth}} {{getNavWestRule}}">
       {{> yield 'footerActionElements' }}
       <div class="eastLinks">
         {{#if showHelp}}

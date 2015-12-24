@@ -26,6 +26,9 @@ Template.registerHelper("getPageTitle", function (argument){
 
 
 Template.appLayout.helpers({
+  getNavWestRule: function (){
+    return Header.getWestRule();
+  },
   hasEntryControls: function (){
     var headerConfig = Session.get('HeaderConfig');
     if (headerConfig && (typeof headerConfig.hasEntryControls === "boolean")) {

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'clinical:active-layout',
-  version: '0.5.7',
+  version: '0.5.9',
   summary: 'Layout templates with keybindings and animations.',
   git: 'http://github.com/clinical-meteor/clinical-active-layout',
   documentation: 'README.md'
@@ -19,7 +19,7 @@ Package.onUse(function (api) {
 
   api.use('clinical:extended-api@2.1.0');
   api.use('clinical:user-model@1.3.1');
-  api.use('clinical:keybindings@1.2.0');
+  api.use('clinical:keybindings@1.2.2');
   // api.use('clinical:overlays@2.1.8');
 
   api.imply('clinical:router');

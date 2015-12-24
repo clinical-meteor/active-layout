@@ -39,6 +39,24 @@ Template.registerHelper("getPageWidth", function (argument) {
 
 
 /**
+ * @summary Get the distance of the west (left) rule guide; measured in pixels from the left of the screen.
+ * @locus Client, Blaze Template
+ * @memberOf ActiveLayout
+ * @name {{getWestRule}}
+ * @returns {Style}
+ * @version 1.2.3
+ * @example
+ * ```html
+ * <nav style="{{getNavWidth}}"></nav>
+ * ```
+ */
+Template.registerHelper("getWestRule", function (argument) {
+  return ActiveLayout.getWestRule();
+});
+
+
+
+/**
  * @summary Display the connection status of the Meteor app.
  * @locus Client, Blaze Template
  * @memberOf ActiveLayout
