@@ -69,12 +69,13 @@ Template.appLayout.helpers({
     }
   },
   getTitleText: function () {
-    var headerConfig = Session.get('HeaderConfig');
-    if (headerConfig && headerConfig.text) {
-      return headerConfig.text.title;
-    } else {
-      return "---";
-    }
+    // var headerConfig = Session.get('HeaderConfig');
+    // if (headerConfig && headerConfig.text) {
+    //   return headerConfig.text.title;
+    // } else {
+    //   return "---";
+    // }
+    return Theme.getAppTitle();
   },
   getUserName: function () {
     if (Meteor.userId()) {

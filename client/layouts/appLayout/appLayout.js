@@ -44,6 +44,7 @@ Meteor.startup(function () {
   // Session.setDefault('showAccountCard', false);
   // Session.setDefault('showThemeCard', false);
   // Session.setDefault('showProfileCard', false);
+
 });
 
 
@@ -242,23 +243,23 @@ Template.appLayout.delayedLayout = function (timeout) {
 //==================================================================================================
 
 
-Template.registerHelper("getOpacityWithCorner", function () {
-  if (Session.get('appWidth') > 768) {
-    if (Session.get('mainPanelIsCard')) {
-      return "background: linear-gradient(225deg, transparent 28.28px, rgba(255,255,255," +
-        Session.get("glassOpacity") + ") 0) top right;";
-    } else {
-      return "background-color: rgba(255,255,255," + Session.get("glassOpacity") +
-        "); top: 50px;";
-    }
-  } else {
-    return "background-color: rgba(255,255,255," + Session.get("glassOpacity") +
-      "); top: 50px;";
-  }
-});
-Template.registerHelper("getOpacity", function () {
-  return "background-color: rgba(255,255,255," + Session.get("glassOpacity") + ");";
-});
+// Template.registerHelper("getOpacityWithCorner", function () {
+//   if (Session.get('appWidth') > 768) {
+//     if (Session.get('mainPanelIsCard')) {
+//       return "background: linear-gradient(225deg, transparent 28.28px, rgba(255,255,255," +
+//         Session.get("glassOpacity") + ") 0) top right;";
+//     } else {
+//       return "background-color: rgba(255,255,255," + Session.get("glassOpacity") +
+//         "); top: 50px;";
+//     }
+//   } else {
+//     return "background-color: rgba(255,255,255," + Session.get("glassOpacity") +
+//       "); top: 50px;";
+//   }
+// });
+// Template.registerHelper("getOpacity", function () {
+//   return "background-color: rgba(255,255,255," + Session.get("glassOpacity") + ");";
+// });
 Template.registerHelper("btnPrimary", function () {
   return "background-color: " + Session.get('backgroundColorA') + "; color: #ffffff;";
 });

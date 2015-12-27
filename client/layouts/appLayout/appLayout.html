@@ -4,7 +4,7 @@
     {{> errorPanel }}
 
     <!-- {{> yield 'header'}} -->
-    <header id="navbarHeader" class="helveticas" style="{{getOpacity}} {{isVisible}} {{getPageWidth}} {{getNavWestRule}}">
+    <header id="navbarHeader" class="helveticas {{getTheme}}" style="{{getOpacity}} {{isVisible}} {{getPageWidth}} {{getNavWestRule}}">
       <div class="unselectable westLinks">
         <a id="navbarTitle" class="navbarTitle">{{getTitleText}}</a>
         {{#if breadcrumbsExist}}
@@ -22,7 +22,7 @@
       </div>
     </header>
 
-    <aside id="searchBar" class="searchBar" style="{{getOpacity}} {{getSearchStyle}}">
+    <aside id="searchBar" class="searchBar" style="{{getOpacity}} {{getSearchStyle}} {{getNavWestRule}}">
       <input id="globalSearchBar" type="text" name="globalSearchBar" value="" placeholder="search...">
     </aside>
 
@@ -57,7 +57,7 @@
 
 
     <!-- {{> yield 'footer'}} -->
-    <footer id="navbarFooter" class="unselectable" style="{{getOpacity}} {{getFooterHeight}} {{getPageWidth}} {{getNavWestRule}}">
+    <footer id="navbarFooter" class="unselectable {{getTheme}}" style="{{getOpacity}} {{getFooterHeight}} {{getPageWidth}} {{getNavWestRule}}">
       {{> yield 'footerActionElements' }}
       <div class="eastLinks">
         {{#if showHelp}}
