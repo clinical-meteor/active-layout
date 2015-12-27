@@ -17,6 +17,7 @@ Meteor.startup(function () {
   Session.setDefault('pageLeftToWestRule', false);
 
   Session.setDefault('useCardLayout', true);
+  Session.setDefault('rightCardVisible', false);
 
   Session.set("eastRule", 200);
   Session.set("westRule", 200);
@@ -29,6 +30,20 @@ Meteor.startup(function () {
     Session.set("appHeight", $(window).height());
     Session.set("appWidth", $(window).width());
   });
+
+
+  //====================================================
+
+  Session.setDefault("avatarImgSrc", 'https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xfa1/v/t1.0-9/10959424_1048857758463899_5840518008623403253_n.jpg?oh=9e5f381178590a5a67ff82f5e5dc37aa&oe=56D11A43');
+
+  //====================================================
+
+  Session.setDefault('accountCardVisible', false);
+  // Session.setDefault('profileCardOpen', false);
+  //
+  // Session.setDefault('showAccountCard', false);
+  // Session.setDefault('showThemeCard', false);
+  // Session.setDefault('showProfileCard', false);
 });
 
 
@@ -51,6 +66,16 @@ Template.appLayout.onRendered(function () {
   $('body').addClass('grayBackground');
 });
 
+Template.appLayout.events({
+  'click #accountDock .cardHandle': function () {
+    Session.toggle('accountCardVisible');
+  },
+  'click #rightDock .cardHandle': function () {
+    Session.toggle('rightCardVisible');
+  }
+});
+
+
 /**
  * @summary This is a Test
  * @locus Anywhere
@@ -63,7 +88,32 @@ Template.appLayout.onRendered(function () {
  * @param {Function} options.transform An optional transformation function. Documents will be passed through this function before being returned from `fetch` or `findOne`, and before being passed to callbacks of `observe`, `map`, `forEach`, `allow`, and `deny`. Transforms are *not* applied for the callbacks of `observeChanges` or to cursors returned from publish functions.
  */
 
+
 Template.appLayout.helpers({
+  showAccountCard: function () {
+    return Session.get('showAccountCard');
+  },
+  showRightCard: function () {
+    return Session.get('showRightCard');
+  },
+  rightCardStyle: function () {
+    return "background: linear-gradient(45deg, transparent 16px, rgba(255,255,255," + Session
+      .get("glassOpacity") + ") 0) bottom right;";
+  },
+  accountCardVisibility: function (){
+    if (Session.get('accountCardVisible')) {
+      return "right: 0px;";
+    } else {
+      return "right: -310px;";
+    }
+  },
+  rightCardVisibility: function () {
+    if (Session.get('rightCardVisible')) {
+      return "right: 0px;";
+    } else {
+      return "right: -310px;";
+    }
+  },
   getContextTitle: function (){
     return Session.get('pageTitle');
   },

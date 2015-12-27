@@ -41,7 +41,18 @@
         {{> yield 'secondPage'}}
       </div>
 
-      {{> yield 'rightDock' }}
+      {{#if showAccountCard}}
+        <div id="accountDock" class="rightDockedCard dockedCard" style="{{rightCardStyle}} {{accountCardVisibility}}">
+          {{> yield 'accountCard'}}
+        </div>
+      {{/if}}
+
+      {{#if showRightCard}}
+        <div id="rightDock" class="rightDockedCard dockedCard" style="{{rightCardStyle}} {{rightCardVisibility}}">
+          {{> yield 'rightDock' }}
+        </div>
+      {{/if}}
+
       {{> yield 'eastPanel' }}
 
 
@@ -72,4 +83,13 @@
   <div id="secondPage" class="secondPage">
 
   </div>
+</template>
+
+ <template name="accountCard">
+  <aside id="accountCard" class="helveticas" style="{{rightCardStyle}} {{rightCardVisibility}}">
+    <div class="cardHandle"></div>
+    <img id="accountAvatar" src="{{getAvatarImgSrc}}" alt="" />
+    <h4>{{ fullName }}</h4>
+    <h4>{{ status }}</h4>
+  </aside>
 </template>
