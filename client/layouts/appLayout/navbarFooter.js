@@ -31,9 +31,15 @@ Template.appLayout.events({
     $('#saveRecordButton').click();
     //$('input[type="submit"]').click();
   },
-  'click #keybindingsBtn': function (){
-    Session.toggle('showReactiveOverlay');
-    Session.toggle('show_keybindings');
+  'click #helpBtn': function (){
+    console.log('helpBtn');
+    var layoutConfig = Session.get('LayoutConfig');
+    if (layoutConfig && layoutConfig.help && layoutConfig.help.link) {
+      Router.go(layoutConfig.help.link)
+    } else {
+      Session.toggle('showReactiveOverlay');
+      Session.toggle('showKeybindings');
+    }
   },
   'click #overlayBtn': function (){
     Session.toggle('showReactiveOverlay');

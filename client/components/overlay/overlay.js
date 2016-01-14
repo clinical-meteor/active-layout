@@ -96,7 +96,7 @@ hideOverlay = function () {
 };
 
 hideKnownModals = function () {
-  Session.set('show_keybindings', false);
+  Session.set('showKeybindings', false);
   Session.set('show_users_picklist', false);
   Session.set('showStudyPicklist', false);
 };

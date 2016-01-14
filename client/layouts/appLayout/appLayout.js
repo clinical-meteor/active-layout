@@ -90,6 +90,14 @@ Template.appLayout.events({
 
 
 Template.appLayout.helpers({
+  getHelpText: function () {
+    var layoutConfig = Session.get('LayoutConfig');
+    if (layoutConfig && layoutConfig.help && layoutConfig.help.text) {
+      return layoutConfig.help.text;
+    } else {
+      return "Help";
+    }
+  },
   showAccountCard: function () {
     return Session.get('showAccountCard');
   },

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'clinical:active-layout',
-  version: '0.6.0',
+  version: '0.6.1',
   summary: 'Layout templates with keybindings and animations.',
   git: 'http://github.com/clinical-meteor/clinical-active-layout',
   documentation: 'README.md'
@@ -32,6 +32,7 @@ Package.onUse(function (api) {
   api.addFiles('client/cardDocks.less', 'client');
 
   api.addFiles('client/objects/Layout.Header.js', 'client');
+  api.addFiles('client/objects/Layout.js', 'client');
   api.addFiles('client/objects/Overlay.js', "client");
 
   api.addFiles('client/layouts/appLayout/appLayout.html', 'client');
@@ -53,6 +54,7 @@ Package.onUse(function (api) {
   api.addFiles('client/components/overlay/overlay.less', "client");
 
   api.addFiles('lib/ActiveLayout.js', "client");
+  api.addFiles('lib/WestPanel.js', "client");
 
   api.export('appLayout');
   api.export('errorPanel');
@@ -61,6 +63,8 @@ Package.onUse(function (api) {
   api.export('Overlay');
   api.export('Header');
   api.export('ActiveLayout');
+  api.export('Layout');
+  api.export('WestPanel');
 
 });
 
