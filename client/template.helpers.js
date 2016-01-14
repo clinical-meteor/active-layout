@@ -36,6 +36,9 @@ Template.registerHelper("getNavWidth", function (argument) {
 Template.registerHelper("getPageWidth", function (argument) {
   return ActiveLayout.getPageWidth();
 });
+Template.registerHelper("getPageHeight", function (argument) {
+  return ActiveLayout.getPageHeight();
+});
 
 
 /**
@@ -203,4 +206,62 @@ Template.registerHelper('isLoggedIn', function () {
   } else {
     return false;
   }
+});
+
+
+
+
+Template.registerHelper("btnPrimary", function () {
+  return "background-color: " + Session.get('backgroundColorA') + "; color: #ffffff;";
+});
+
+Template.registerHelper("getNorthRule", function () {
+  return ActiveLayout.getNorthRule();
+});
+
+Template.registerHelper("getRightPanelNorthRule", function (){
+  var topDistance = 0;
+
+  if (Session.get('showNavbars')) {
+    topDistance = topDistance + 50;
+  }
+
+  if (Session.get('showSearchbar')) {
+    topDistance = topDistance + 50;
+  }
+
+  // we should add spacing if the app is in card mode and in landscape mode of some sort
+  // otherwise, if it's in portrait or phone mode, we want it flush with the header
+  if (Session.get('appWidth') > 768) {
+    topDistance = topDistance + 50;
+  }
+
+  if (Session.get('useHierarchicalLayout')) {
+    topDistance = topDistance + 50;
+  }
+
+    return "top: " + topDistance + "px;";
+});
+
+Template.registerHelper("symmetricalHeight", function () {
+  var topDistance = 0;
+  var height = Session.get('appHeight');
+
+  if (Session.get('showNavbars')) {
+    topDistance = topDistance + 50;
+  }
+
+  if (Session.get('showSearchbar')) {
+    topDistance = topDistance + 50;
+  }
+
+  // we should add spacing if the app is in card mode and in landscape mode of some sort
+  // otherwise, if it's in portrait or phone mode, we want it flush with the header
+  if (Session.get('useCardLayout')) {
+    if (Session.get('appWidth') > 768) {
+      topDistance = topDistance + 50;
+    }
+  }
+
+  return "height: " + (height - (topDistance * 2)) + "px;";
 });
