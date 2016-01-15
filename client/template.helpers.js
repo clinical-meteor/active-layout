@@ -54,7 +54,7 @@ Template.registerHelper("getPageHeight", function (argument) {
  * ```
  */
 Template.registerHelper("getWestRule", function (argument) {
-  return ActiveLayout.getWestRule();
+  return Layout.getWestRule();
 });
 
 
@@ -216,7 +216,30 @@ Template.registerHelper("btnPrimary", function () {
 });
 
 Template.registerHelper("getNorthRule", function () {
-  return ActiveLayout.getNorthRule();
+  //return Layout.getNorthRule();
+  var topDistance = 0;
+
+  if (Session.get('showNavbars')) {
+    topDistance = topDistance + 50;
+  }
+
+  if (Session.get('showSearchbar')) {
+    topDistance = topDistance + 50;
+  }
+
+  // // we should add spacing if the app is in card mode and in landscape mode of some sort
+  // // otherwise, if it's in portrait or phone mode, we want it flush with the header
+  if (Session.get('useCardLayout')) {
+    if (Session.get('appWidth') > 1024) {
+      topDistance = topDistance + 50;
+    }
+  }
+  //
+  // if (Session.get('useHierarchicalLayout')) {
+  //   topDistance = topDistance + 50;
+  // }
+
+  return "top: " + topDistance + "px;";
 });
 
 Template.registerHelper("getRightPanelNorthRule", function (){

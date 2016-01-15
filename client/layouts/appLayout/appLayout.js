@@ -6,7 +6,7 @@ Meteor.startup(function () {
   Session.setDefault("backgroundColorA", '#456ad7');
 
   Session.setDefault("eastRule", 200);
-  Session.setDefault("westRule", 200);
+  Session.setDefault("westRule", 440);
   Session.setDefault("northRule", 100);
   Session.setDefault("southRule", 100);
 
@@ -19,10 +19,7 @@ Meteor.startup(function () {
   Session.setDefault('useCardLayout', true);
   Session.setDefault('rightCardVisible', false);
 
-  Session.set("eastRule", 200);
-  Session.set("westRule", 200);
   Session.set('appWidth', $(window).width());
-  Session.set('pageLeftToWestRule', false);
 
   window.addEventListener('resize', function () {
     Session.set("resize", new Date());
@@ -165,8 +162,8 @@ generateStylesheet = function (rightPanel) {
     // LEFT PANEL
     var leftPosition = Session.get('mainPanelLeft');
     if (Session.get('westPanelVisible')) {
-      //leftPosition = leftPosition + 300;
-      leftPosition = 440;
+      // leftPosition = 440;
+      leftPosition = Session.get('westRule');
     };
     stylesheet.left = leftPosition + "px;";
   };
