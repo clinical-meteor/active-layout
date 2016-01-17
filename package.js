@@ -1,6 +1,6 @@
 Package.describe({
   name: 'clinical:active-layout',
-  version: '0.6.3',
+  version: '0.6.4',
   summary: 'Layout templates with keybindings and animations.',
   git: 'http://github.com/clinical-meteor/clinical-active-layout',
   documentation: 'README.md'
@@ -28,6 +28,7 @@ Package.onUse(function (api) {
   api.imply('clinical:keybindings');
   api.imply('clinical:user-model');
 
+  api.addFiles('client/app.resize.js', 'client');
   api.addFiles('client/template.helpers.js', 'client');
   api.addFiles('client/cardDocks.less', 'client');
 
