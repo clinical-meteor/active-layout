@@ -359,6 +359,22 @@ Template.registerHelper("getLeftDistance", function () {
   return "";
 
 });
+
+
+Template.registerHelper("getLeftTransform", function () {
+  var leftDistance = 0;
+  if (Session.get('useHorizontalFences')) {
+    leftDistance = Session.get('westRule');
+    return "transform: translate3d(" + leftDistance + "px, 0, 0);";
+  } else {
+    if (Session.get('appSurfaceOffset')) {
+      return "";
+    } else {
+      return "transform: translate3d(0, 0, 0);";
+    }
+  }
+});
+
 Template.registerHelper("getAppRightDistance", function () {
   if (Session.get('useEastFence')) {
     return "right: 10%;";
