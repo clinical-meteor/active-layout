@@ -3,22 +3,7 @@ Meteor.startup(function () {
   Session.setDefault('appHeight', $(window).height());
   Session.setDefault('appWidth', $(window).width());
   Session.setDefault("glassOpacity", .95);
-  Session.setDefault("backgroundColorA", '#456ad7');
-
-  Session.setDefault("eastRule", 200);
-  Session.setDefault("westRule", 440);
-  Session.setDefault("northRule", 100);
-  Session.setDefault("southRule", 100);
-
   Session.setDefault('activeRecord', null);
-
-  Session.setDefault('navIsFullscreen', true);
-  Session.setDefault('pageIsWide', false);
-  Session.setDefault('pageLeftToWestRule', false);
-
-  Session.setDefault('useCardLayout', true);
-  Session.setDefault('rightCardVisible', false);
-
   Session.set('appWidth', $(window).width());
 
   window.addEventListener('resize', function () {
@@ -27,29 +12,19 @@ Meteor.startup(function () {
     Session.set("appWidth", $(window).width());
   });
 
-
   //====================================================
-
+  // refactor to clinical:user-model
   Session.setDefault("avatarImgSrc", 'https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xfa1/v/t1.0-9/10959424_1048857758463899_5840518008623403253_n.jpg?oh=9e5f381178590a5a67ff82f5e5dc37aa&oe=56D11A43');
 
   //====================================================
 
-  Session.setDefault('accountCardVisible', false);
-  // Session.setDefault('profileCardOpen', false);
-  //
-  // Session.setDefault('showAccountCard', false);
-  // Session.setDefault('showThemeCard', false);
-  // Session.setDefault('showProfileCard', false);
-
 });
 
 
-Session.setDefault('transparencyDivHeight', 100);
-Session.setDefault('mainPanelLeft', 0);
 
 
 Meteor.startup(function () {
-  Template.appLayout.layout();
+  Template.appLayout.layoutPanelsBasedOnBreakpoints();
 });
 
 
@@ -59,7 +34,7 @@ Meteor.startup(function () {
 
 
 Template.appLayout.onRendered(function () {
-  Template.appLayout.layout();
+  Template.appLayout.layoutPanelsBasedOnBreakpoints();
   $('body').addClass('grayBackground');
 });
 
@@ -73,20 +48,22 @@ Template.appLayout.events({
 });
 
 
-/**
- * @summary This is a Test
- * @locus Anywhere
- * @instancename collection
- * @class
- * @param {String} name The name of the collection.  If null, creates an unmanaged (unsynchronized) local collection.
- * @param {Object} [options]
- * @param {Object} options.connection The server connection that will manage this collection. Uses the default connection if not specified.  Pass the return value of calling [`DDP.connect`](#ddp_connect) to specify a different server. Pass `null` to specify no connection. Unmanaged (`name` is null) collections cannot specify a connection.
- * @param {String} options.idGeneration The method of generating the `_id` fields of new documents in this collection.  Possible values:
- * @param {Function} options.transform An optional transformation function. Documents will be passed through this function before being returned from `fetch` or `findOne`, and before being passed to callbacks of `observe`, `map`, `forEach`, `allow`, and `deny`. Transforms are *not* applied for the callbacks of `observeChanges` or to cursors returned from publish functions.
- */
-
 
 Template.appLayout.helpers({
+  // We use #each on an array of one item so that the "list" template is
+  // removed and a new copy is added when changing lists, which is
+  // important for animation purposes. #each looks at the _id property of it's
+  // items to know when to insert a new item and when to update an old one.
+  thisArray: function() {
+    console.log('[thisArray]', [this]);
+    return [this];
+  },
+  secondPanelEnabled: function (){
+    return Session.get('secondPanelEnabled');
+  },
+  getWestPanelWidth: function(){
+    return "width: " + Session.get('westRule') + "px; ";
+  },
   getHelpText: function () {
     var layoutConfig = Session.get('LayoutConfig');
     if (layoutConfig && layoutConfig.help && layoutConfig.help.text) {
@@ -123,23 +100,23 @@ Template.appLayout.helpers({
     return Session.get('pageTitle');
   },
   resized: function () {
-    Template.appLayout.layout();
+    Template.appLayout.layoutPanelsBasedOnBreakpoints();
   },
   getLeftPanelStyle: function () {
-    return Style.parse(generateStylesheet());
+    return Style.parse(Template.appLayout.generateStylesheet());
   },
   getRightPanelStyle: function () {
     if (Session.get('pageIsWide')) {
       return "visibility: hidden; left: " + (Session.get('appWidth') + 1024) + "px;";
     } else {
-      return Style.parse(generateStylesheet(true));
+      return Style.parse(Template.appLayout.generateStylesheet(true));
     }
   },
 });
 
 
 
-generateStylesheet = function (rightPanel) {
+Template.appLayout.generateStylesheet = function (rightPanel) {
   var stylesheet = {};
 
     // RIGHT PANEL
@@ -159,13 +136,13 @@ generateStylesheet = function (rightPanel) {
       stylesheet.visibility = "hidden;";
     }
   } else {
-    // LEFT PANEL
-    var leftPosition = Session.get('mainPanelLeft');
-    if (Session.get('westPanelVisible')) {
-      // leftPosition = 440;
-      leftPosition = Session.get('westRule');
-    };
-    stylesheet.left = leftPosition + "px;";
+    // // LEFT PANEL
+    // var leftPosition = Session.get('mainPanelLeft');
+    // if (Session.get('westPanelVisible')) {
+    //   // leftPosition = 440;
+    //   leftPosition = Session.get('westRule');
+    // };
+    // stylesheet.left = leftPosition + "px;";
   };
 
 
@@ -199,9 +176,8 @@ generateStylesheet = function (rightPanel) {
 };
 
 
-Template.appLayout.layout = function () {
+Template.appLayout.layoutPanelsBasedOnBreakpoints = function () {
   Session.set('transparencyDivHeight', $('#innerPanel').height() + 80);
-
 
   // two-page with sidebar
   // 2076 = 2 (768px panels) + 100px spacer + 2 margins at least 220px wide
@@ -238,8 +214,14 @@ Template.appLayout.layout = function () {
   }
 };
 
+
+// DEPRECATED
+Template.appLayout.layout = function (timeout) {
+  Template.appLayout.layoutPanelsBasedOnBreakpoints();
+};
+// DEPRECATED
 Template.appLayout.delayedLayout = function (timeout) {
   Meteor.setTimeout(function () {
-    Template.appLayout.layout();
+    Template.appLayout.layoutPanelsBasedOnBreakpoints();
   }, timeout);
 };

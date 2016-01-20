@@ -15,7 +15,6 @@ Template.appLayout.helpers({
     }
   },
   getFooterHeight: function (){
-    console.log('getFooterHeight', Session.get('showNavbars'));
     if (Session.get('showNavbars')) {
       return "height: 50px;";
     } else {

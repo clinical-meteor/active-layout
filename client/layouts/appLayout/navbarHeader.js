@@ -1,5 +1,5 @@
 Session.setDefault("show_background", false);
-
+Session.setDefault('showSearchCorner', false);
 
 
 
@@ -26,8 +26,8 @@ Template.registerHelper("getPageTitle", function (argument){
 
 
 Template.appLayout.helpers({
-  getNavWestRule: function (){
-    return Header.getWestRule();
+  getSearchBarWidth: function(){
+    ActiveLayout.getNavWidth();
   },
   hasEntryControls: function (){
     var headerConfig = Session.get('HeaderConfig');
@@ -51,10 +51,16 @@ Template.appLayout.helpers({
     } else {
       style = "top: 0px;";
     }
-    if (Session.get('showSearchbar')) {
-      style = style + " height: 50px; visibility: visible; background: linear-gradient(315deg, transparent 24px, rgba(255,255,255," + Session.get('glassOpacity') + ") 0) bottom right;";
+    if (Session.get('showSearchCorner')) {
+      style = style + "visibility: visible; background: linear-gradient(315deg, transparent 24px, rgba(255,255,255," + Session.get('glassOpacity') + ") 0) bottom right;";
     } else {
-      style = style + " height: 0px; visibility: hidden; background: linear-gradient(315deg, transparent 24px, rgba(255,255,255," + Session.get('glassOpacity') + ") 0) bottom right;";
+      style = style + "visibility: visible;";
+    }
+
+    if (Session.get('showSearchbar')) {
+      style = style + " height: 50px;";
+    } else {
+      style = style + " height: 0px;";
     }
     return style;
   },

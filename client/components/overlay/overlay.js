@@ -15,6 +15,13 @@ Session.set('overlay_template_reference_id', null);
 
 
 Template.reactiveOverlaysTemplate.helpers({
+  getAnimation: function(){
+    if (Overlay.isVisible()) {
+      return "fadeIn";
+    } else {
+      return "fadeOut";
+    }
+  },
   getMainPanelLeft: function () {
     return "left: " + ($('#mainPanel').position().left + 20) + "px;"
   },
@@ -22,7 +29,7 @@ Template.reactiveOverlaysTemplate.helpers({
     return false;
   },
   isVisible: function () {
-    if (Session.get('showReactiveOverlay')) {
+    if (Overlay.isVisible()) {
       return true;
     } else if (Session.get('show_overlay_image')) {
       return true;
@@ -67,11 +74,7 @@ Template.reactiveOverlaysTemplate.rendered = function () {
 
 Template.reactiveOverlaysTemplate.events({
   'click .overlay-mask': function (evt) {
-    hideOverlay();
-    hideKnownModals();
-  },
-  'click .overlay-image': function (evt) {
-    hideOverlay();
+    Overlay.hide();
   }
 });
 

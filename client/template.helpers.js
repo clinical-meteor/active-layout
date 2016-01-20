@@ -30,14 +30,85 @@ Template.registerHelper("getAppTitle", function (argument){
  * ```
  */
 Template.registerHelper("getNavWidth", function (argument) {
-  return ActiveLayout.getPageWidth();
+  return ActiveLayout.getNavWidth();
 });
 
+/**
+ * @summary Get the calculated width of the page.
+ * @locus Client, Blaze Template
+ * @memberOf ActiveLayout
+ * @name {{getPageWidth}}
+ * @returns {Style}
+ * @version 1.2.3
+ * @example
+ * ```html
+ * <div class="page" style="{{getPageWidth}}">
+ *   <!-- page content -->
+ * </div>
+ * ```
+ */
 Template.registerHelper("getPageWidth", function (argument) {
   return ActiveLayout.getPageWidth();
 });
+
+
+/**
+ * @summary Get the calculated width of the modal dialog.
+ * @locus Client, Blaze Template
+ * @memberOf ActiveLayout
+ * @name {{getModalWidth}}
+ * @returns {Style}
+ * @version 1.2.3
+ * @example
+ * ```html
+ * <div class="modal" style="{{isModalVisible}}">
+ *   <div class="modal-dialog" style="{{getModalWidth}}">
+ *     <!-- modal content -->
+ *   </div>
+ * </div>
+ * ```
+ */
+Template.registerHelper("getModalWidth", function (argument) {
+  return ActiveLayout.getModalWidth();
+});
+
+
+/**
+ * @summary Get the calculated height of the page.
+ * @locus Client, Blaze Template
+ * @memberOf ActiveLayout
+ * @name {{getPageHeight}}
+ * @returns {Style}
+ * @version 1.2.3
+ * @example
+ * ```html
+ * <div class="page" style="{{getPageHeight}}">
+ *   <!-- page content -->
+ * </div>
+ * ```
+ */
 Template.registerHelper("getPageHeight", function (argument) {
   return ActiveLayout.getPageHeight();
+});
+
+/**
+ * @summary Get the calculated height of the page.
+ * @locus Client, Blaze Template
+ * @memberOf ActiveLayout
+ * @name {{getPageHeight}}
+ * @returns {Style}
+ * @version 1.2.3
+ * @example
+ * ```html
+ * <div class="page" style="{{getPageHeight}}">
+ *   <!-- page content -->
+ * </div>
+ * ```
+ */
+Template.registerHelper("pageColor", function (argument) {
+  if (Session.get('pageWhite')) {
+    return "background-color: white;"
+  }
 });
 
 
@@ -54,7 +125,7 @@ Template.registerHelper("getPageHeight", function (argument) {
  * ```
  */
 Template.registerHelper("getWestRule", function (argument) {
-  return Layout.getWestRule();
+  return ActiveLayout.getWestRule();
 });
 
 
@@ -215,6 +286,7 @@ Template.registerHelper("btnPrimary", function () {
   return "background-color: " + Session.get('backgroundColorA') + "; color: #ffffff;";
 });
 
+//DEPRECATED
 Template.registerHelper("getNorthRule", function () {
   //return Layout.getNorthRule();
   var topDistance = 0;
@@ -240,6 +312,74 @@ Template.registerHelper("getNorthRule", function () {
   // }
 
   return "top: " + topDistance + "px;";
+});
+
+
+Template.registerHelper("getTopDistance", function () {
+
+  var topDistance = 0;
+
+  if (Session.get('showNavbars')) {
+    topDistance = topDistance + 50;
+  }
+
+  if (Session.get('showSearchbar')) {
+    topDistance = topDistance + 50;
+  }
+
+  // // we should add spacing if the app is in card mode and in landscape mode of some sort
+  // // otherwise, if it's in portrait or phone mode, we want it flush with the header
+  // if (Session.get('useCardLayout')) {
+  //   if (Session.get('appWidth') > 1024) {
+  //     topDistance = topDistance + 50;
+  //   }
+  // }
+
+
+  if (Session.get('hasPageVerticalPadding')) {
+    topDistance = topDistance + 50;
+  }
+
+
+  // if (Session.get('useHierarchicalLayout')) {
+  //   topDistance = topDistance + 50;
+  // }
+
+  return "top: " + topDistance + "px;";
+});
+Template.registerHelper("getLeftDistance", function () {
+
+  var leftDistance = 0;
+
+  if (Session.get('useHorizontalFences')) {
+    leftDistance = Session.get('westRule');
+    return "left: " + leftDistance + "px;";
+  }
+
+  return "";
+
+});
+Template.registerHelper("getAppRightDistance", function () {
+  if (Session.get('useEastFence')) {
+    return "right: 10%;";
+    //return "right: " + Session.get('eastRule') + "px";
+  }
+});
+Template.registerHelper("appSurfaceOffset", function () {
+  if (Session.get('appSurfaceOffset')) {
+    if (Session.get('appWidth') > 768) {
+
+    // -webkit-transform: translate3d(270px, 0, 0);
+    // -moz-transform: translate3d(270px, 0, 0);
+    // -ms-transform: translate3d(270px, 0, 0);
+    // -o-transform: translate3d(270px, 0, 0);
+    // transform: translate3d(270px, 0, 0);
+
+
+      return "left: " + Session.get('westRule') + "px";
+      //return "transform: translate3d(" + Session.get('westRule') + ", 0, 0); -webkit-transform: translate3d(" + Session.get('westRule') + ", 0, 0);";
+    }
+  }
 });
 
 Template.registerHelper("getRightPanelNorthRule", function (){

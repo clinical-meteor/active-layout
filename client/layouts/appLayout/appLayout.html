@@ -1,81 +1,81 @@
 
 <template name="appLayout">
 
+  <div id="appLayout" style="{{getAppRightDistance}}">
     {{> errorPanel }}
 
-    <!-- {{> yield 'header'}} -->
-    <header id="navbarHeader" class="helveticas {{getTheme}}" style="{{getOpacity}} {{isVisible}} {{getPageWidth}} {{getNavWestRule}}">
-      <div class="unselectable westLinks">
-        <a id="navbarTitle" class="navbarTitle">{{getTitleText}}</a>
-        {{#if breadcrumbsExist}}
-          <a id="breadcrumb" class="breadcrumb navbarLink" style="{{isVisible}}"> {{getPageTitle}}</a>
-        {{/if}}
-      </div>
-
-      <div class="unselectable eastLinks">
-        {{#if hasEntryControls}}
-          <a id="usernameLink" href="{{getUsernameLink}}" class="eastAligned navbarLink" style="{{isVisible}}">{{ fullName }}</a>
-          {{#if isLoggedIn }}
-            <a id="logoutLink" class="eastAligned navbarLink" style="{{isVisible}}">Logout</a>
-          {{/if}}
-        {{/if}}
-      </div>
-    </header>
-
-    <aside id="searchBar" class="searchBar" style="{{getOpacity}} {{getSearchStyle}} {{getNavWestRule}}">
-      <input id="globalSearchBar" type="text" name="globalSearchBar" value="" placeholder="search...">
+    {{> yield 'leftDock' }}
+    <aside id="westPanel" style="{{getWestPanelWidth}}">
+      {{> yield 'westPanel' }}
     </aside>
 
-      {{> yield 'leftDock' }}
-      {{> yield 'westPanel' }}
+    <div id="panelSurface" style="{{appSurfaceOffset}}">
+      <header id="navbarHeader" class="helveticas {{getTheme}}" style="{{getOpacity}} {{isVisible}} {{getLeftDistance}} {{getNavWidth}} {{getBackgroundColor 'colorE'}} ">
+        {{> yield 'header'}}
+      </header>
 
-      <div id="contextTitle" class="helveticas">{{getContextTitle}}</div>
-      <div class="hidden">{{resized}}</div>
-
-      <!-- {{> yield 'sidebar'}} -->
-
-      <div id="mainPanel" class="helveticas layoutPanel" style="{{getLeftPanelStyle}} {{getNorthRule}} {{getPageWidth}} {{getWestRule}}">
-        {{> yield }}
-      </div>
-      <div id="secondPanel" class="unselectable helveticas layoutPanel" style="{{getRightPanelStyle}} {{getRightPanelNorthRule}}">
-        {{> yield 'secondPage'}}
-      </div>
-
-      {{#if showAccountCard}}
-        <div id="accountDock" class="rightDockedCard dockedCard" style="{{rightCardStyle}} {{accountCardVisibility}}">
-          {{> yield 'accountCard'}}
-        </div>
-      {{/if}}
-
-      {{#if showRightCard}}
-        <div id="rightDock" class="rightDockedCard dockedCard" style="{{rightCardStyle}} {{rightCardVisibility}}">
-          {{> yield 'rightDock' }}
-        </div>
-      {{/if}}
-
-      {{> yield 'eastPanel' }}
+      <aside id="globalInput" class="globalInput" style="{{getOpacity}} {{getSearchStyle}} {{getNavWidth}}">
+        <!-- {{> globalSearchBar }} -->
+        {{> yield 'globalInput' }}
+      </aside>
 
 
-    <!-- {{> yield 'footer'}} -->
-    <footer id="navbarFooter" class="unselectable {{getTheme}}" style="{{getOpacity}} {{getFooterHeight}} {{getPageWidth}} {{getNavWestRule}}">
-      {{> yield 'footerActionElements' }}
-      <div class="eastLinks">
-        {{#if showHelp}}
-        <button id="helpBtn">{{getHelpText}}</button>
+
+        <div id="contextTitle" class="helveticas">{{getContextTitle}}</div>
+        <div class="hidden">{{resized}}</div>
+
+          <div id="mainPanel" class="helveticas layoutPanel" style="{{getTopDistance}} {{getLeftDistance}} {{getPageWidth}} {{getPageHeight}} {{pageColor}}">
+            <div id="contentAnimation">
+              {{#each thisArray}}
+                {{> yield}}
+              {{/each}}
+            </div>
+          </div>
+
+          {{#if secondPanelEnabled}}
+            <div id="secondPanel" class="unselectable helveticas layoutPanel" style="{{getRightPanelStyle}} {{getRightPanelNorthRule}}">
+              {{> yield 'secondPage'}}
+            </div>
+          {{/if}}
+
+        {{#if showAccountCard}}
+          <div id="accountDock" class="rightDockedCard dockedCard" style="{{rightCardStyle}} {{accountCardVisibility}}">
+            {{> yield 'accountCard'}}
+          </div>
         {{/if}}
-      </div>
-    </footer>
+
+        {{#if showRightCard}}
+          <div id="rightDock" class="rightDockedCard dockedCard" style="{{rightCardStyle}} {{rightCardVisibility}}">
+            {{> yield 'rightDock' }}
+          </div>
+        {{/if}}
+
+      <footer id="navbarFooter" class="unselectable {{getTheme}}" style="{{getOpacity}} {{getFooterHeight}} {{getLeftDistance}} {{getNavWidth}} {{getBackgroundColor 'colorE'}} ">
+        {{> yield 'footerActionElements' }}
+        <div class="eastLinks">
+          {{#if showHelp}}
+          <button id="helpBtn">{{getHelpText}}</button>
+          {{/if}}
+        </div>
+      </footer>
+    </div>
+
+    {{> yield 'eastPanel' }}
+  </div>
 
   {{> reactiveOverlaysTemplate }}
 
-  <!-- ISSUE #1 - Find a better way to attach modal dialogs that isn't app specific. -->
-  {{> yield 'keybindingsModal' }}
-  {{> yield 'userPicklistModal' }}
-  {{> yield 'studyPicklistModal' }}
-  {{> yield 'collaborationPicklistModal' }}
-  {{> yield 'studiesPicklistModal' }}
-  {{> yield 'metadataPicklistModal' }}
-  {{> yield 'samplesPicklistModal' }}
+
+  {{> yield 'modalA'}}
+  {{> yield 'modalB'}}
+  {{> yield 'modalC'}}
+  {{> yield 'modalD'}}
+  {{> yield 'modalE'}}
+  {{> yield 'modalF'}}
+  {{> yield 'modalG'}}
+  {{> yield 'modalH'}}
+  {{> yield 'modalI'}}
+  {{> yield 'modalJ'}}
 </template>
 
 

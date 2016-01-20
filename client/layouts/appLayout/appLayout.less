@@ -15,28 +15,29 @@ body{
   -webkit-text-size-adjust: auto;
 }
 #appLayout{
-  // background-color: #AEC9A8;
-  background-color: #dddddd;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0px;
-  left: 0px;
+  position: absolute;
   margin: 0px;
   padding: 0px;
   overflow-y: scroll;
 }
 
-
+#panelSurface{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 0px;
+  margin-top: 0px;
+}
 #mainPanel{
   position: absolute;
   left: 0px;
   width: 100%;
-  //border-left: 2px solid orange;
-  //border-right: 2px solid orange;
   padding-top: 0px;
   margin-top: 0px;
   height: 100%;
+  overflow-y: scroll;
 }
 #secondPanel{
   position: fixed;
@@ -44,10 +45,6 @@ body{
   width: 768px;
   min-height: 100px;
   background-color: white;
-  //margin: 40px;
-}
-.layoutPanel{
-  // border: 1px solid orange;
 }
 #contextTitle{
   position: fixed;
@@ -58,28 +55,15 @@ body{
   white-space: nowrap;
 }
 
+//==================================================================================================
+// WEST PANEL
 
-//====================================================================================
-// OVERRIDES - PLEASE TRY TO REMOVE FROM THIS FILE, AND FIX CORRECTLY IN PROPER PLACES
-
-// hacky fixes
-.btn-danger{
-  padding-right: 3em;
-  color: black !important;
-  background-color: white !important;
-  height: 40px;
-  margin-top: 1px;
+#westPanel{
+  position: fixed;
+  top: 0px;
+  height: 100%;
 }
-// .control-label{
-//   position: relative !important;
-//   top: 80px;
-//   left: 10px;
-// }
-// .form-control{
-//   border-top: 1px none #bbbbbb !important;
-//   border-bottom: 1px solid #bbbbbb !important;
-//   border-left: 1px dashed #bbbbbb !important;
-// }
+
 
 #usersTablePage{
   padding: 40px;
@@ -199,8 +183,6 @@ select {
 //==================================================================================================
 //
 
-
-
 p{
   line-height: 140%;
 }
@@ -209,41 +191,15 @@ a{
 }
 
 
-
-
-.fa-github{
-  cursor: pointer;
-}
-#cookbookLink{
-  left: 50%;
-}
-
-
 //==================================================================================================
 //
 
-
-// landscape orientation
-@media only screen and (min-width: 768px) {
-  #transparentPanel{
-    max-width: 768px;
-  }
-
-  #mainPanel{
-    max-width: 768px;
-  }
-
-}
 
 // landscape orientation
 @media only screen and (max-width: 768px) {
   #mainPanel{
     margin-bottom: 50px;
     left: 0px !important;
-    //padding-right: 20px;
-  }
-  #navbarHeader{
-    border-bottom: 1px solid green;
   }
   .dockedCard{
     visibility: hidden;

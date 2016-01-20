@@ -1,6 +1,6 @@
 Package.describe({
   name: 'clinical:active-layout',
-  version: '0.6.4',
+  version: '0.7.0',
   summary: 'Layout templates with keybindings and animations.',
   git: 'http://github.com/clinical-meteor/clinical-active-layout',
   documentation: 'README.md'
@@ -13,6 +13,7 @@ Package.onUse(function (api) {
   api.use('meteor-platform');
   api.use('templating');
   api.use('session');
+  api.use('reactive-var');
 
   api.use('grove:less@0.1.1');
   api.use('clinical:router@2.0.17');
@@ -32,8 +33,9 @@ Package.onUse(function (api) {
   api.addFiles('client/template.helpers.js', 'client');
   api.addFiles('client/cardDocks.less', 'client');
 
-  api.addFiles('client/objects/Layout.Header.js', 'client');
+  api.addFiles('client/objects/ActiveLayout.js', "client");
   api.addFiles('client/objects/Layout.js', 'client');
+  api.addFiles('client/objects/WestPanel.js', "client");
   api.addFiles('client/objects/Overlay.js', "client");
 
   api.addFiles('client/layouts/appLayout/appLayout.html', 'client');
@@ -54,19 +56,20 @@ Package.onUse(function (api) {
   api.addFiles('client/components/overlay/overlay.js', "client");
   api.addFiles('client/components/overlay/overlay.less', "client");
 
-  api.addFiles('lib/ActiveLayout.js', "client");
-  api.addFiles('lib/WestPanel.js', "client");
+  api.addFiles('client/components/globalSearchBar/globalSearchBar.html', "client");
+  api.addFiles('client/components/globalSearchBar/globalSearchBar.js', "client");
+  api.addFiles('client/components/globalSearchBar/globalSearchBar.less', "client");
 
-  api.export('appLayout');
-  api.export('errorPanel');
-  api.export('keybindingsModal');
+  api.addFiles('client/components/defaultNavbarHeader/defaultNavbarHeader.html', "client");
+  api.addFiles('client/components/defaultNavbarHeader/defaultNavbarHeader.js', "client");
+  api.addFiles('client/components/defaultNavbarHeader/defaultNavbarHeader.less', "client");
 
-  api.export('Overlay');
-  api.export('Header');
+  api.export('globalSearchBar');
+
   api.export('ActiveLayout');
-  api.export('Layout');
   api.export('WestPanel');
-
+  api.export('Overlay');
+  api.export('Layout');
 });
 
 

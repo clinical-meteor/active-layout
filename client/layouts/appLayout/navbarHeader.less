@@ -1,9 +1,8 @@
 #navbarHeader{
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
-  //background-color: white;
   outline: none;
   z-index: 1;
 
@@ -13,7 +12,6 @@
     padding-top: 15px;
     padding-left: 20px;
     text-decoration: none;
-    //color: black;
     cursor: pointer;
     float: left;
   }
@@ -34,18 +32,18 @@
   }
 }
 
-#searchBar{
+#globalInput{
   width: 60%;
   min-width: 500px;
-  left: 0px;
-  position: fixed;
+  position: absolute;
+  border-bottom: 1px solid lightgray;
   input{
+    padding-left: 20px;
     border-top: 1px solid #cccccc;
     background-color: rgba(0,0,0,0);
     width: 100%;
   }
 }
-
 
 
 
@@ -56,7 +54,6 @@
   right: 0px;
   top: 0px;
   min-width: 200px;
-  padding-right: 20px;
   font-size: 14px;
   .fa{
     padding-right: 10px;
