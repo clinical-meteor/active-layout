@@ -1,7 +1,7 @@
 Session.setDefault('LayoutConfig', {
   hasEntryControls: true,
   help: {
-    hide: false,
+    display: true,
     link: false,
     text: false
   },

@@ -50,6 +50,7 @@ Template.appLayout.events({
 
 
 Template.appLayout.helpers({
+
   // We use #each on an array of one item so that the "list" template is
   // removed and a new copy is added when changing lists, which is
   // important for animation purposes. #each looks at the _id property of it's
@@ -182,34 +183,20 @@ Template.appLayout.layoutPanelsBasedOnBreakpoints = function () {
   // two-page with sidebar
   // 2076 = 2 (768px panels) + 100px spacer + 2 margins at least 220px wide
   if (Session.get('appWidth') > 2096) {
-    Session.set('sidebarLeft', (100 + (Session.get('appWidth') - 1876) * 0.5) - 240);
-    Session.set('mainPanelLeft', (100 + (Session.get('appWidth') - 1856) * 0.5));
     Session.set("sidebarVisible", true);
 
     // one-page with sidebar
     // 1208 =  single 768px panel + 2 margins at least 220px wide + 20px sidebar spacer
   } else if (Session.get('appWidth') > 1228) {
-    Session.set('sidebarLeft', (Session.get('appWidth') - 1228) * 0.5);
-    Session.set("sidebarVisible", true);
     Session.set('mainPanelLeft', (Session.get('appWidth') - 768) * 0.5);
-
-    if (Session.get('pageLeftToWestRule')) {
-      Session.set('mainPanelLeft', 200);
-    } else {
-      Session.set('mainPanelLeft', (Session.get('appWidth') - 768) * 0.5);
-    }
 
     // one-page
     // 768 =  single 768px panel
   } else if (Session.get('appWidth') > 768) {
-    Session.set('mainPanelLeft', (Session.get('appWidth') - 768) * 0.5);
-    Session.set("sidebarLeft", -200);
     Session.set("sidebarVisible", false);
 
     // mobile
   } else {
-    Session.set('mainPanelLeft', 0);
-    Session.set("sidebarLeft", -200);
     Session.set("sidebarVisible", false);
   }
 };
