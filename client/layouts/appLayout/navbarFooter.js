@@ -8,7 +8,7 @@
 Template.appLayout.helpers({
   showHelp: function (){
     var layoutConfig = Session.get('LayoutConfig');
-    if (layoutConfig && layoutConfig.help (typeof layoutConfig.help.display === "boolean")) {
+    if (layoutConfig && layoutConfig.help && (typeof layoutConfig.help.display === "boolean")) {
 
       return layoutConfig.help.display;
     } else {
