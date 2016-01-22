@@ -13,25 +13,24 @@ Design
 
 ![iPad-Landscape-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPad%20-%20Landscape%20-%20Fullscreen.png)
 
-![Thunderbolt-Pagescreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
-
 ![Desktop-Landscape-Pagescreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Pagescreen.png)
 
 ![Desktop-Landscape-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Fullscreen.png)
 
 ![Desktop-Landscape-Fullscreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Fullscreen%20-%20Navbars.png)
 
+![Thunderbolt-Pagescreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen.png)
 
+![Thunderbolt-Pagescreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
 
+![Thunderbolt-Pagescreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
 
 ================
 ###Use Cases
 
 ####Navbars
 
-![Thunderbolt-Pagescreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen.png)
 
-![Thunderbolt-Pagescreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
 
 ####Global Search/Input
 
