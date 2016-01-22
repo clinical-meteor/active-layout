@@ -5,17 +5,17 @@ Design
 
 ![Desktop-Landscape-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Fullscreen.png)
 
-https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Pagescreen.png
+![Desktop-Landscape-Pagescreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Pagescreen.png)
 
-https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png
+![Thunderbolt-Pagescreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
 
-https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen.png
+![Thunderbolt-Pagescreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen.png)
 
-https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPad%20-%20Landscape%20-%20Fullscreen.png
+![iPad-Landscape-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPad%20-%20Landscape%20-%20Fullscreen.png)
 
-https://github.com/clinical-meteor/clinical-active-layout/blob/master/design/iPad%20-%20Landscape%20-%20Pagescreen.png
+![iPad-Landscape-Pagescreen](https://github.com/clinical-meteor/clinical-active-layout/blob/master/design/iPad%20-%20Landscape%20-%20Pagescreen.png)
 
-https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPhone6%20-%20Portrait%20-%20Fullscreen.png
+![iPhone-Portrait-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPhone6%20-%20Portrait%20-%20Fullscreen.png)
 
 
 
