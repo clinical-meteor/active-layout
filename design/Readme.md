@@ -16,7 +16,7 @@ Design
 ![Desktop-Landscape-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Fullscreen.png)
 
 ![Desktop-Landscape-Fullscreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Fullscreen%20-%20Navbars.png)
-----
+
 
 
 
