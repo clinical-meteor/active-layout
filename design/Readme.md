@@ -43,9 +43,9 @@ Design
 
 ####Fullscreen/Pagescreen
 
-#####Rulers
+####Rulers
 
-#####Device Support
+####Device Support
 
 
 
