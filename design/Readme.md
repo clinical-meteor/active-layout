@@ -26,26 +26,31 @@ Design
 ![Thunderbolt-Pagescreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
 
 ================
-###Use Cases
+###Layout Use Cases
 
 ####Navbars
 
-
-
 ####Global Search/Input
-
-####Darkroom Mode
-
-####Brand Theming
-
-####Card Layout
-
-####Fullscreen/Pagescreen
 
 ####Rulers
 
 ####Device Support
 
+####Card Layout
+
+####Fullscreen/Pagescreen
+
+
+================
+###Theming Use Cases
+
+####Darkroom Mode
+
+####Brand Theming
+
+####Background
+
+####Opacity
 
 
 
