@@ -1,5 +1,6 @@
 ## clinical:active-layout
-Layout templates with keybindings and animations.
+Layout templates with keybindings and animations.  
+[![Circle CI](https://circleci.com/gh/clinical-meteor/active-layout/tree/master.svg?style=svg)](https://circleci.com/gh/clinical-meteor/active-layout/tree/master)
 
 ===============================
 #### Installation
