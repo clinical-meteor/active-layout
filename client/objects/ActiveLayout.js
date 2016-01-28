@@ -36,6 +36,8 @@ Session.setDefault('LayoutConfig', {
 
 
 
+
+
 ActiveLayout = {
   /**
    * @summary Configure the ActiveLayout infrastructure.
@@ -300,6 +302,39 @@ ActiveLayout = {
 
     return "height: " + pageHeight + "px;";
   },
+
+
+
+  /**
+   * @summary Get the page or tile color.
+   * @locus Client
+   * @memberOf ActiveLayout
+   * @name getPageColor
+   * @returns {StyleString}
+   * @version 1.2.3
+   * @example
+   * ```html
+   * ActiveLayout.getPageColor();
+   * ```
+   */
+  getPageColor: function (){
+    var layoutConfig = Session.get('LayoutConfig');
+    console.log('getPageColor', layoutConfig);
+    if (layoutConfig && layoutConfig.defaults && (typeof layoutConfig.help.display === "boolean")) {
+      if (layoutConfig.defaults.pageWhite) {
+        return "background-color: white;";
+      } else {
+        return "background-color: " + layoutConfig.palette.colorE + ";";
+      }
+    } else {
+      return "background-color: " + layoutConfig.palette.colorE + ";";
+    }
+  },
+
+
+
+
+
 
   getNorthRule: function (){
     var topDistance = 0;

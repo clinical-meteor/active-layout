@@ -106,9 +106,7 @@ Template.registerHelper("getPageHeight", function (argument) {
  * ```
  */
 Template.registerHelper("pageColor", function (argument) {
-  if (Session.get('pageWhite')) {
-    return "background-color: white;"
-  }
+  return ActiveLayout.getPageColor();
 });
 
 
