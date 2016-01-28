@@ -114,55 +114,55 @@ ActiveLayout = {
         //console.log('properties.defaults', properties.defaults);
 
         if (typeof properties.defaults.showNavbars === "boolean") {
-          Session.set('showNavbars', properties.defaults.showNavbars)
+          Session.set('showNavbars', properties.defaults.showNavbars);
         }
         if (typeof properties.defaults.showSidebar === "boolean") {
-          Session.set('showSidebar', properties.defaults.showSidebar)
+          Session.set('showSidebar', properties.defaults.showSidebar);
         }
         if (typeof properties.defaults.showSearchbar === "boolean") {
-          Session.set('showSearchbar', properties.defaults.showSearchbar)
+          Session.set('showSearchbar', properties.defaults.showSearchbar);
         }
         if (typeof properties.defaults.useHierarchicalLayout === "boolean") {
-          Session.set('useHierarchicalLayout', properties.defaults.useHierarchicalLayout)
+          Session.set('useHierarchicalLayout', properties.defaults.useHierarchicalLayout);
         }
         if (typeof properties.defaults.mainPanelIsCard === "boolean") {
-          Session.set('mainPanelIsCard', properties.defaults.mainPanelIsCard)
+          Session.set('mainPanelIsCard', properties.defaults.mainPanelIsCard);
         }
         if (typeof properties.defaults.wideCard === "boolean") {
-          Session.set('wideCard', properties.defaults.wideCard)
+          Session.set('wideCard', properties.defaults.wideCard);
         }
         if (typeof properties.defaults.useCardLayout === "boolean") {
-          Session.set('useCardLayout', properties.defaults.useCardLayout)
+          Session.set('useCardLayout', properties.defaults.useCardLayout);
         }
         if (typeof properties.defaults.hasPageVerticalPadding === "boolean") {
-          Session.set('hasPageVerticalPadding', properties.defaults.hasPageVerticalPadding)
+          Session.set('hasPageVerticalPadding', properties.defaults.hasPageVerticalPadding);
         }
         if (typeof properties.defaults.useHorizontalFences === "boolean") {
-          Session.set('useHorizontalFences', properties.defaults.useHorizontalFences)
+          Session.set('useHorizontalFences', properties.defaults.useHorizontalFences);
         }
         if (typeof properties.defaults.useVerticalFences === "boolean") {
-          Session.set('useVerticalFences', properties.defaults.useVerticalFences)
+          Session.set('useVerticalFences', properties.defaults.useVerticalFences);
         }
         if (typeof properties.defaults.fullscreen === "boolean") {
-          Session.set('fullscreen', properties.defaults.fullscreen)
+          Session.set('fullscreen', properties.defaults.fullscreen);
         }
         if (typeof properties.defaults.fullscreenNavbars === "boolean") {
-          Session.set('fullscreenNavbars', properties.defaults.fullscreenNavbars)
+          Session.set('fullscreenNavbars', properties.defaults.fullscreenNavbars);
         }
         if (typeof properties.defaults.navIsFullscreen === "boolean") {
-          Session.set('navIsFullscreen', properties.defaults.navIsFullscreen)
+          Session.set('navIsFullscreen', properties.defaults.navIsFullscreen);
         }
         if (typeof properties.defaults.secondPanelEnabled === "boolean") {
-          Session.set('secondPanelEnabled', properties.defaults.secondPanelEnabled)
+          Session.set('secondPanelEnabled', properties.defaults.secondPanelEnabled);
         }
         if (typeof properties.defaults.appSurfaceOffset === "boolean") {
-          Session.set('appSurfaceOffset', properties.defaults.appSurfaceOffset)
+          Session.set('appSurfaceOffset', properties.defaults.appSurfaceOffset);
         }
         if (typeof properties.defaults.useEastFence === "boolean") {
-          Session.set('useEastFence', properties.defaults.useEastFence)
+          Session.set('useEastFence', properties.defaults.useEastFence);
         }
         if (typeof properties.defaults.pageWhite === "boolean") {
-          Session.set('pageWhite', properties.defaults.pageWhite)
+          Session.set('pageWhite', properties.defaults.pageWhite);
         }
       }
 
