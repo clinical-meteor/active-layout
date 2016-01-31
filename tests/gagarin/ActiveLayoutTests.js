@@ -43,9 +43,9 @@ describe('clinical:active-layout', function () {
       // expect(ActiveLayout.getPageWidth()).to.be.equal("width: 568px;");
 
       if (Session.get('navIsFullscreen')) {
-        expect(ActiveLayout.getPageWidth()).to.be.equal("width: 100%;");
-      } else {
         expect(ActiveLayout.getPageWidth()).to.be.equal("width: 568px;");
+      } else {
+        expect(ActiveLayout.getPageWidth()).to.be.equal("width: 100%;");
       }
     });
   });
