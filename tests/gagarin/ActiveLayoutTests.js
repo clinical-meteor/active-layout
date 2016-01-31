@@ -35,6 +35,7 @@ describe('clinical:active-layout', function () {
 
   it('ActiveLayout.getPageWidth()', function () {
     return client.setWindowSize(1600, 1200).execute(function () {
+
       // Session.set('appWidth', 768);
       // Session.set('westRule', 100);
       // Session.set('eastRule', 100);
