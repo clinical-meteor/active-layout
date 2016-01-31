@@ -39,7 +39,8 @@ describe('clinical:active-layout', function () {
       //     expect(ActiveLayout.getPageWidth()).to.be.equal("width: 568px;");
       //   }
       // }
-      expect(ActiveLayout.getPageWidth()).to.be.equal("width: 754px;");
+      // expect(ActiveLayout.getPageWidth()).to.be.equal("width: 754px;");
+      expect(ActiveLayout.getPageWidth()).to.be.equal("width: 100%;");
 
 
     });
