@@ -38,9 +38,15 @@ describe('clinical:active-layout', function () {
       Session.set('appWidth', 768);
       Session.set('westRule', 100);
       Session.set('eastRule', 100);
-      Session.set('navIsFullscreen', false);
 
-      expect(ActiveLayout.getPageWidth()).to.be.equal("width: 568px;");
+      // Session.set('navIsFullscreen', false);
+      // expect(ActiveLayout.getPageWidth()).to.be.equal("width: 568px;");
+
+      if (Session.get('navIsFullscreen')) {
+        expect(ActiveLayout.getPageWidth()).to.be.equal("width: 100%;");
+      } else {
+        expect(ActiveLayout.getPageWidth()).to.be.equal("width: 568px;");
+      }
     });
   });
   it('ActiveLayout.getAppTitle()', function () {
