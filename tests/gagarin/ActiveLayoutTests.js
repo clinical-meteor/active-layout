@@ -34,19 +34,25 @@ describe('clinical:active-layout', function () {
   });
 
   it('ActiveLayout.getPageWidth()', function () {
-    return client.execute(function () {
-      Session.set('appWidth', 768);
-      Session.set('westRule', 100);
-      Session.set('eastRule', 100);
+    return client.setWindowSize(1600, 1200).execute(function () {
+      // Session.set('appWidth', 768);
+      // Session.set('westRule', 100);
+      // Session.set('eastRule', 100);
 
       // Session.set('navIsFullscreen', false);
       // expect(ActiveLayout.getPageWidth()).to.be.equal("width: 568px;");
+      // if (typeof Session.get('navIsFullscreen') === "undefined") {
+      //   expect(ActiveLayout.getPageWidth()).to.be.equal("width: 100%;");
+      // } else {
+      //   if (Session.get('navIsFullscreen')) {
+      //     expect(ActiveLayout.getPageWidth()).to.be.equal("width: 100%;");
+      //   } else {
+      //     expect(ActiveLayout.getPageWidth()).to.be.equal("width: 568px;");
+      //   }
+      // }
+      expect(ActiveLayout.getPageWidth()).to.be.equal("width: 568px;");
 
-      if (typeof Session.get('navIsFullscreen') === "undefined") {
-        expect(ActiveLayout.getPageWidth()).to.be.equal("width: 100%;");
-      } else {
-        expect(ActiveLayout.getPageWidth()).to.be.equal("width: 568px;");
-      }
+
     });
   });
   it('ActiveLayout.getAppTitle()', function () {
