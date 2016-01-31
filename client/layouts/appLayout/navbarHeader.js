@@ -4,6 +4,16 @@ Session.setDefault('showSearchCorner', false);
 
 
 Template.appLayout.events({
+  'click #navbarHeader': function(){
+    if (Session.get("appWidth") < 1040) {
+      if (Session.get("appWidth") > 768) {
+         Session.toggle('appSurfaceOffset');
+         Session.toggle('useEastFence');
+      } else {
+        Session.toggle('useHorizontalFences');
+      }
+    }
+  },
   'keyup #globalSearchBar' : function (){
     Session.set('collaborationSearchFilter', $('#globalSearchBar').val());
   },

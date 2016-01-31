@@ -27,16 +27,6 @@ Template.appLayout.helpers({
 // most of these items need to be refactored away into actionBarHelperBlocks
 
 Template.appLayout.events({
-  'click #navbarHeader': function(){
-    if (Session.get("appWidth") < 1040) {
-      if (Session.get("appWidth") > 768) {
-         Session.toggle('appSurfaceOffset');
-         Session.toggle('useEastFence');
-      } else {
-        Session.toggle('useHorizontalFences');
-      }
-    }
-  },
   'click #saveFormButton': function (){
     $('#saveRecordButton').click();
     //$('input[type="submit"]').click();
