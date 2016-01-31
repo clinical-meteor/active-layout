@@ -187,17 +187,23 @@ Template.appLayout.layoutPanelsBasedOnBreakpoints = function () {
 
     // one-page with sidebar
     // 1208 =  single 768px panel + 2 margins at least 220px wide + 20px sidebar spacer
-  } else if (Session.get('appWidth') > 1228) {
-    Session.set('mainPanelLeft', (Session.get('appWidth') - 768) * 0.5);
-
+  } else if (Session.get('appWidth') > 1040) {
+    //Session.set('mainPanelLeft', (Session.get('appWidth') - 768) * 0.5);
+    // Session.set('useHorizontalFences', false);
+    Session.set('navIsFullscreen', false);
+    Session.set('wideCard', false);
     // one-page
     // 768 =  single 768px panel
   } else if (Session.get('appWidth') > 768) {
     Session.set("sidebarVisible", false);
-
+    Session.set('navIsFullscreen', true);
+    Session.set('wideCard', true);
     // mobile
   } else {
     Session.set("sidebarVisible", false);
+    Session.set('navIsFullscreen', true);
+    Session.set('wideCard', true);
+    // Session.set('useHorizontalFences', true);
   }
 };
 
