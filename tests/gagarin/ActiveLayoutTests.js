@@ -4,18 +4,6 @@ describe('clinical:active-layout', function () {
   var client = browser(server);
   var collaborationId = null;
 
-  beforeEach(function () {
-    server.execute(function () {
-
-    }).then(function (value){
-
-    });
-  });
-  afterEach(function () {
-    server.execute(function () {
-
-    });
-  });
 
   it('ActiveLayout should only exist on the client', function () {
     return client.execute(function () {
@@ -34,7 +22,7 @@ describe('clinical:active-layout', function () {
   });
 
   it('ActiveLayout.getPageWidth()', function () {
-    return client.setWindowSize(1600, 1200).execute(function () {
+    return client.setWindowSize(1024, 768).execute(function () {
 
       // Session.set('appWidth', 768);
       // Session.set('westRule', 100);
@@ -51,7 +39,7 @@ describe('clinical:active-layout', function () {
       //     expect(ActiveLayout.getPageWidth()).to.be.equal("width: 568px;");
       //   }
       // }
-      expect(ActiveLayout.getPageWidth()).to.be.equal("width: 100%;");
+      expect(ActiveLayout.getPageWidth()).to.be.equal("width: 754px;");
 
 
     });
