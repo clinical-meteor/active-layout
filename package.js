@@ -1,6 +1,6 @@
 Package.describe({
   name: 'clinical:active-layout',
-  version: '0.7.12',
+  version: '0.7.13',
   summary: 'Layout templates with keybindings and animations.',
   git: 'http://github.com/clinical-meteor/clinical-active-layout',
   documentation: 'README.md'

@@ -50,12 +50,13 @@
         {{/if}}
 
       <footer id="navbarFooter" class="unselectable {{getTheme}}" style="{{getOpacity}} {{getFooterHeight}} {{getNavWidth}} {{getBackgroundColor 'colorE'}} ">
-        {{> yield 'footerActionElements' }}
-        <div class="eastLinks">
-          {{#if showHelp}}
-          <button id="helpBtn">{{getHelpText}}</button>
-          {{/if}}
-        </div>
+        {{> yield 'footer' }}
+
+        {{#if showHelp}}
+          <div class="eastLinks">
+            <button id="helpBtn">{{getHelpText}}</button>
+          </div>
+        {{/if}}
       </footer>
     </div>
 
