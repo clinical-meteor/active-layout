@@ -318,7 +318,7 @@ ActiveLayout = {
     }
 
     if (Session.get('hasPageVerticalPadding')) {
-      pageHeight = pageHeight - 100;      
+      pageHeight = pageHeight - 100;
     }
 
     return "height: " + pageHeight + "px;";
@@ -348,10 +348,12 @@ ActiveLayout = {
       if (themeConfig.defaults.pageWhite) {
         return "background-color: white;";
       } else {
-        return "background-color: " + themeConfig.palette.colorE + ";";
+        return "background-color: inherit;";
+        // return "background-color: " + themeConfig.palette.colorE + ";";
       }
     } else {
-      return "background-color: " + themeConfig.palette.colorE + ";";
+      return "background-color: inherit;";
+      //return "background-color: " + themeConfig.palette.colorE + ";";
     }
   },
 
