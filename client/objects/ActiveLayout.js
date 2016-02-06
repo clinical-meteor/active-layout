@@ -14,6 +14,11 @@ Session.setDefault('LayoutConfig', {
     title: "Sample Title",
     logout: "Logout"
   },
+  fence: {
+    east: 270,
+    west: 270,
+    maxPageWidth: 768
+  },
   defaults: {
     showNavbars: true,
     showSidebar: true,
@@ -108,6 +113,9 @@ ActiveLayout = {
         if (properties.fence.west) {
           Session.set('westRule', properties.fence.west)
         }
+        if (properties.fence.maxPageWidth) {
+          Session.set('maxPageWidth', properties.fence.maxPageWidth)
+        }
       }
 
       if (properties.defaults) {
@@ -182,11 +190,16 @@ ActiveLayout = {
    * ```
    */
   getNavWidth: function (){
-    var width = Session.get('appWidth') - (Session.get('westRule') + Session.get('eastRule'));
     if (Session.get('navIsFullscreen')) {
       return "width: 100%;";
     } else {
-      return "width: " + width + "px;";
+      if (Session.get('maxPageWidth')) {
+        return "width: " + Session.get('maxPageWidth') + "px;";
+      } else {
+        // synonymous with useHorizontalFences
+        var width = Session.get('appWidth') - (Session.get('westRule') + Session.get('eastRule'));
+        return "width: " + width + "px;";
+      }
     }
   },
 
@@ -203,11 +216,15 @@ ActiveLayout = {
    * ```
    */
   getPageWidth: function (){
-    var width = Session.get('appWidth') - (Session.get('westRule') + Session.get('eastRule'));
     if (Session.get('wideCard')) {
       return "width: 100%;";
     } else {
-      return "width: " + width + "px;";
+      if (Session.get('maxPageWidth')) {
+        return "width: " + Session.get('maxPageWidth') + "px;";
+      } else {
+        var width = Session.get('appWidth') - (Session.get('westRule') + Session.get('eastRule'));
+        return "width: " + width + "px;";
+      }
     }
   },
   /**
@@ -300,6 +317,10 @@ ActiveLayout = {
       pageHeight = pageHeight - 50;
     }
 
+    if (Session.get('hasPageVerticalPadding')) {
+      pageHeight = pageHeight - 100;      
+    }
+
     return "height: " + pageHeight + "px;";
   },
 
@@ -318,16 +339,19 @@ ActiveLayout = {
    * ```
    */
   getPageColor: function (){
-    var layoutConfig = Session.get('LayoutConfig');
-    console.log('getPageColor', layoutConfig);
-    if (layoutConfig && layoutConfig.defaults && (typeof layoutConfig.help.display === "boolean")) {
-      if (layoutConfig.defaults.pageWhite) {
+    // var layoutConfig = Session.get('LayoutConfig');
+    // console.log('getPageColor', layoutConfig);
+    var themeConfig = Session.get('ThemeConfig');
+    console.log('themeConfig', themeConfig);
+
+    if (themeConfig && themeConfig.defaults && (typeof themeConfig.help.display === "boolean")) {
+      if (themeConfig.defaults.pageWhite) {
         return "background-color: white;";
       } else {
-        return "background-color: " + layoutConfig.palette.colorE + ";";
+        return "background-color: " + themeConfig.palette.colorE + ";";
       }
     } else {
-      return "background-color: " + layoutConfig.palette.colorE + ";";
+      return "background-color: " + themeConfig.palette.colorE + ";";
     }
   },
 

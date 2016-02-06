@@ -333,11 +333,9 @@ Template.registerHelper("getTopDistance", function () {
   //   }
   // }
 
-
   if (Session.get('hasPageVerticalPadding')) {
     topDistance = topDistance + 50;
   }
-
 
   // if (Session.get('useHierarchicalLayout')) {
   //   topDistance = topDistance + 50;
@@ -396,7 +394,8 @@ Template.registerHelper("appSurfaceOffset", function () {
   }
 });
 
-Template.registerHelper("getRightPanelNorthRule", function (){
+Template.registerHelper("getSecondTopDistance", function (){
+
   var topDistance = 0;
 
   if (Session.get('showNavbars')) {
@@ -407,9 +406,7 @@ Template.registerHelper("getRightPanelNorthRule", function (){
     topDistance = topDistance + 50;
   }
 
-  // we should add spacing if the app is in card mode and in landscape mode of some sort
-  // otherwise, if it's in portrait or phone mode, we want it flush with the header
-  if (Session.get('appWidth') > 768) {
+  if (Session.get('hasPageVerticalPadding')) {
     topDistance = topDistance + 50;
   }
 
@@ -417,7 +414,29 @@ Template.registerHelper("getRightPanelNorthRule", function (){
     topDistance = topDistance + 50;
   }
 
-    return "top: " + topDistance + "px;";
+  return "top: " + topDistance + "px;";
+
+  // var topDistance = 0;
+  //
+  // if (Session.get('showNavbars')) {
+  //   topDistance = topDistance + 50;
+  // }
+  //
+  // if (Session.get('showSearchbar')) {
+  //   topDistance = topDistance + 50;
+  // }
+  //
+  // // we should add spacing if the app is in card mode and in landscape mode of some sort
+  // // otherwise, if it's in portrait or phone mode, we want it flush with the header
+  // if (Session.get('appWidth') > 768) {
+  //   topDistance = topDistance + 50;
+  // }
+  //
+  // if (Session.get('useHierarchicalLayout')) {
+  //   topDistance = topDistance + 50;
+  // }
+  //
+  //   return "top: " + topDistance + "px;";
 });
 
 Template.registerHelper("symmetricalHeight", function () {

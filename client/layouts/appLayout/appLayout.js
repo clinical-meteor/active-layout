@@ -108,7 +108,8 @@ Template.appLayout.helpers({
   },
   getRightPanelStyle: function () {
     if (Session.get('pageIsWide')) {
-      return "visibility: hidden; left: " + (Session.get('appWidth') + 1024) + "px;";
+      return "visibility: hidden; left: 1118px;";
+      // return "visibility: hidden; left: " + (Session.get('appWidth') + 1024) + "px;";
     } else {
       return Style.parse(Template.appLayout.generateStylesheet(true));
     }
@@ -122,31 +123,14 @@ Template.appLayout.generateStylesheet = function (rightPanel) {
 
     // RIGHT PANEL
   if (rightPanel) {
-    if (Session.get('appWidth') > 2076) {
-      var halfDiff = (Session.get('appWidth') - 1856) * 0.5;
-      if (Session.get('westPanelVisible')) {
-        halfDiff = halfDiff + 300;
-      }
-      stylesheet.left = (halfDiff + 938) + "px;";
+    if (Session.get('appWidth') > 1886) {
+      stylesheet.visibility = "visible;";
+      stylesheet.left = '1118px;'
     } else {
-      var leftPosition = Session.get('mainPanelLeft');
-      if (Session.get('westPanelVisible')) {
-        leftPosition = leftPosition + 300;
-      }
-      stylesheet.left = leftPosition + "px;";
       stylesheet.visibility = "hidden;";
+      stylesheet.left = '1118px;'
     }
-  } else {
-    // // LEFT PANEL
-    // var leftPosition = Session.get('mainPanelLeft');
-    // if (Session.get('westPanelVisible')) {
-    //   // leftPosition = 440;
-    //   leftPosition = Session.get('westRule');
-    // };
-    // stylesheet.left = leftPosition + "px;";
-  };
-
-
+  }
 
   if (Session.get('pageIsWide')) {
     stylesheet.width = (Session.get('appWidth') - 400) + "px;";

@@ -32,7 +32,7 @@
           </div>
 
           {{#if secondPanelEnabled}}
-            <div id="secondPanel" class="unselectable helveticas layoutPanel" style="{{getRightPanelStyle}} {{getRightPanelNorthRule}}">
+            <div id="secondPanel" class="unselectable helveticas layoutPanel" style="{{getRightPanelStyle}} {{getSecondTopDistance}} {{getPageHeight}}">
               {{> yield 'secondPage'}}
             </div>
           {{/if}}
@@ -54,7 +54,7 @@
 
         {{#if showHelp}}
           <div class="eastLinks">
-            <button id="helpBtn">{{getHelpText}}</button>
+            <button id="helpBtn" style="{{getPaletteColor 'colorD'}}">{{getHelpText}}</button>
           </div>
         {{/if}}
       </footer>
