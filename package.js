@@ -1,6 +1,6 @@
 Package.describe({
   name: 'clinical:active-layout',
-  version: '0.7.16',
+  version: '0.7.17',
   summary: 'Layout templates with keybindings and animations.',
   git: 'http://github.com/clinical-meteor/clinical-active-layout',
   documentation: 'README.md'
@@ -22,7 +22,7 @@ Package.onUse(function (api) {
   api.use('clinical:user-model@1.3.1');
   api.use('clinical:keybindings@1.2.4');
   api.use('clinical:theming@0.1.0');
-  api.use('clinical:glass-ui@1.3.5');
+  api.use('clinical:glass-ui@1.3.9');
 
   api.imply('clinical:router');
   api.imply('clinical:extended-api');
@@ -61,6 +61,11 @@ Package.onUse(function (api) {
   api.addFiles('client/components/defaultNavbarHeader/defaultNavbarHeader.html', "client");
   api.addFiles('client/components/defaultNavbarHeader/defaultNavbarHeader.js', "client");
   api.addFiles('client/components/defaultNavbarHeader/defaultNavbarHeader.less', "client");
+
+
+  api.addFiles('client/components/defaultNavbarFooter/defaultNavbarFooter.html', "client");
+  api.addFiles('client/components/defaultNavbarFooter/defaultNavbarFooter.js', "client");
+  api.addFiles('client/components/defaultNavbarFooter/defaultNavbarFooter.less', "client");
 
   api.export('globalSearchBar');
 
