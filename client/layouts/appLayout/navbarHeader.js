@@ -4,7 +4,7 @@ Session.setDefault('showSearchCorner', false);
 
 
 Template.appLayout.events({
-  'click #navbarHeader': function(){
+  'click .sidebarToggle': function(){
     if (Session.get("appWidth") < 1040) {
       if (Session.get("appWidth") > 768) {
          Session.toggle('appSurfaceOffset');

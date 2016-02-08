@@ -39,26 +39,26 @@ module.exports = {
   //     .cssProperty('body', 'background-image', '-webkit-linear-gradient(top, #555555, #aaaaaa 100%);')
   //
   //     // background-image: -moz-linear-gradient(top, #555555, #aaaaaa 100%); background-image: -o-linear-gradient(top, #555555, #aaaaaa 100%); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; -moz-user-select: none; -khtml-user-select: none;')
-  //     // .verify.elementPresent("#navbarHeader")
+  //     // .verify.elementPresent(".sidebarToggle")
   // },
   // "it should hide/show navbar": function(client){
   //   client
   //     .resizeWindow(1024,768)
-  //     .verify.elementPresent("#navbarHeader")
+  //     .verify.elementPresent(".sidebarToggle")
   //     .verify.elementPresent("#navbarFooter")
   //     .keys(client.Keys.CONTROL)
   //     .keys(client.Keys.COMMAND)
   //     .keys(client.Keys.N)
   //     .pause(300)
   //     .keys(client.Keys.NULL)
-  //     .verify.elementNotPresent("#navbarHeader")
+  //     .verify.elementNotPresent(".sidebarToggle")
   //     .verify.elementNotPresent("#navbarFooter")
   //     .keys(client.Keys.CONTROL)
   //     .keys(client.Keys.COMMAND)
   //     .keys(client.Keys.N)
   //     .pause(300)
   //     .keys(client.Keys.NULL)
-  //     .verify.elementPresent("#navbarHeader")
+  //     .verify.elementPresent(".sidebarToggle")
   //     .verify.elementPresent("#navbarFooter")
   // },
   "sidebar should be visible in landscape and desktop modes" : function (client) {
@@ -71,7 +71,7 @@ module.exports = {
   "sidebar should be hidden in phone mode" : function (client) {
     client
       .resizeWindow(480, 800)
-        .verify.visible("#navbarHeader")
+        .verify.visible(".sidebarToggle")
         .verify.elementPresent("#panelSurface")
         // .verify.cssProperty("#panelSurface", "transform", "matrix(1, 0, 0, 1, 0, 0)")
         .verify.cssProperty("#panelSurface", "left", "0px")
@@ -79,7 +79,7 @@ module.exports = {
   "sidebar should be hidden in portrait mode" : function (client) {
     client
       .resizeWindow(768, 1024)
-        .verify.visible("#navbarHeader")
+        .verify.visible(".sidebarToggle")
         .verify.elementPresent("#panelSurface")
         // .verify.cssProperty("#panelSurface", "transform", "matrix(1, 0, 0, 1, 0, 0)")
         .verify.cssProperty("#panelSurface", "left", "0px")
@@ -87,7 +87,7 @@ module.exports = {
   "sidebar should be visible in landscape mode" : function (client) {
     client
       .resizeWindow(1024, 768)
-        .verify.visible("#navbarHeader")
+        .verify.visible(".sidebarToggle")
         .verify.elementPresent("#panelSurface")
         .verify.cssProperty("#panelSurface", "left", "270px")
         // .verify.cssProperty("#panelSurface", "transform", "matrix(1, 0, 0, 1, 0, 0)")
@@ -95,38 +95,38 @@ module.exports = {
   "anonymous user - sidebar toggle opens and closes in phone mode" : function (client) {
     client
       .resizeWindow(480, 800)
-        .verify.visible("#navbarHeader")
+        .verify.visible(".sidebarToggle")
         .verify.elementPresent("#panelSurface")
         // .verify.cssProperty("#panelSurface", "transform", "matrix(1, 0, 0, 1, 0, 0)")
         .verify.cssProperty("#panelSurface", "left", "0px")
-        .click("#navbarHeader").pause(500)
+        .click(".sidebarToggle").pause(500)
         .verify.cssProperty("#panelSurface", "left", "0px")
         .verify.cssProperty("#panelSurface", "transform", "matrix(1, 0, 0, 1, 270, 0)")
-        .click("#navbarHeader").pause(500)
+        .click(".sidebarToggle").pause(500)
   },
   "anonymous user - sidebar toggle opens and closes in portrait mode" : function (client) {
     client
       .resizeWindow(768, 1024)
-        .verify.visible("#navbarHeader")
+        .verify.visible(".sidebarToggle")
         .verify.elementPresent("#panelSurface")
         // .verify.cssProperty("#panelSurface", "transform", "matrix(1, 0, 0, 1, 0, 0)")
         .verify.cssProperty("#panelSurface", "left", "0px")
-        .click("#navbarHeader").pause(500)
+        .click(".sidebarToggle").pause(500)
         .verify.cssProperty("#panelSurface", "left", "0px")
         .verify.cssProperty("#panelSurface", "transform", "matrix(1, 0, 0, 1, 270, 0)")
-        .click("#navbarHeader").pause(500)
+        .click(".sidebarToggle").pause(500)
   },
   "anonymous user - page is max width of 768 on larger screens" : function (client) {
     client
       .resizeWindow(1280, 1024)
-        .verify.visible("#navbarHeader")
+        .verify.visible(".sidebarToggle")
         .verify.elementPresent("#panelSurface")
         .verify.cssProperty("#mainPanel", "width", "768px")
   },
   "anonymous user - second page appears on HDTV screens" : function (client) {
     client
       .resizeWindow(1920, 1080)
-        .verify.visible("#navbarHeader")
+        .verify.visible(".sidebarToggle")
         .verify.elementPresent("#panelSurface")
 
         .verify.elementPresent("#mainPanel")
@@ -139,11 +139,11 @@ module.exports = {
   // "anonymous user - sidebar toggle switches between pagescreen and fullscreen in landscape mode" : function (client) {
   //   client
   //     .resizeWindow(1024, 768)
-  //       .verify.visible("#navbarHeader")
+  //       .verify.visible(".sidebarToggle")
   //       .verify.elementPresent("#panelSurface")
   //       .verify.cssProperty("#panelSurface", "left", "0px")
   //       .verify.cssProperty("#panelSurface", "transform", "matrix(1, 0, 0, 1, 270, 0)")
-  //       .click("#navbarHeader").pause(500)
+  //       .click(".sidebarToggle").pause(500)
   //       .verify.cssProperty("#panelSurface", "transform", "matrix(1, 0, 0, 1, 0, 0)")
   // },
   after: function(client){
