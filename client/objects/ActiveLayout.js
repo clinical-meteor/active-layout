@@ -339,21 +339,22 @@ ActiveLayout = {
    * ```
    */
   getPageColor: function (){
-    // var layoutConfig = Session.get('LayoutConfig');
-    // console.log('getPageColor', layoutConfig);
-    var themeConfig = Session.get('ThemeConfig');
-    console.log('themeConfig', themeConfig);
 
-    if (themeConfig && themeConfig.defaults && (typeof themeConfig.help.display === "boolean")) {
-      if (themeConfig.defaults.pageWhite) {
-        return "background-color: white;";
-      } else {
-        return "background-color: inherit;";
-        // return "background-color: " + themeConfig.palette.colorE + ";";
-      }
+
+    var themeConfig = Session.get('ThemeConfig');
+    if (themeConfig && themeConfig.page && themeConfig.page.background) {
+      return "background-color: " + themeConfig.page.background + ";";
     } else {
       return "background-color: inherit;";
       //return "background-color: " + themeConfig.palette.colorE + ";";
+    }
+
+    // pageWhite acts as an override
+    var layoutConfig = Session.get('LayoutConfig');
+    if (layoutConfig && layoutConfig.defaults && (typeof layoutConfig.defaults.pageWhite === "boolean")) {
+      if (layoutConfig.defaults.pageWhite) {
+        return "background-color: white;";
+      }
     }
   },
 

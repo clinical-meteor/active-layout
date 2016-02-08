@@ -1,6 +1,6 @@
 <template name="defaultNavbarHeader">
   <div id="defaultNavbarHeader" class="unselectable westLinks">
-    <a id="navbarTitle" class="navbarTitle">{{getTitleText}}</a>
+    <a id="navbarTitle" class="navbarTitle sidebarToggle">{{getTitleText}}</a>
     {{#if breadcrumbsExist}}
       <a id="breadcrumb" class="breadcrumb navbarLink" style="{{isVisible}}"> {{getPageTitle}}</a>
     {{/if}}
