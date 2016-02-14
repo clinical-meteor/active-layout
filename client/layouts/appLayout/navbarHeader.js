@@ -5,18 +5,16 @@ Session.setDefault('showSearchCorner', false);
 
 Template.appLayout.events({
   'click .sidebarToggle': function(){
-    if (Session.get("appWidth") < 1040) {
+    if (Session.get("appWidth") > 1040) {
+      WestPanel.show();
+      MainPanel.toggleFullscreen();
+    } else {
       if (Session.get("appWidth") > 768) {
-         Session.toggle('appSurfaceOffset');
-         Session.toggle('useEastFence');
         WestPanel.toggle();
-         //WestPanel.hide();
+        MainPanel.toggleFullscreen();
       } else {
-        Session.toggle('useHorizontalFences');
         WestPanel.toggle();
       }
-    } else {
-      WestPanel.show();
     }
   },
   'keyup #globalSearchBar' : function (){
@@ -24,9 +22,6 @@ Template.appLayout.events({
   },
   'change #globalSearchBar' : function (){
     Session.set('collaborationSearchFilter', $('#globalSearchBar').val());
-  },
-  'click #navbarTitle': function () {
-    Router.go('/');
   },
   'click #logoutLink': function () {
     Meteor.logout();

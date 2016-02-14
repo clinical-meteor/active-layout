@@ -38,10 +38,13 @@ Template.appLayout.onRendered(function () {
   $('body').addClass('grayBackground');
 });
 
+
 Template.appLayout.events({
+  // DEPRECATED
   'click #accountDock .cardHandle': function () {
     Session.toggle('accountCardVisible');
   },
+  // DEPRECATED
   'click #rightDock .cardHandle': function () {
     Session.toggle('rightCardVisible');
   }
@@ -56,7 +59,7 @@ Template.appLayout.helpers({
   // important for animation purposes. #each looks at the _id property of it's
   // items to know when to insert a new item and when to update an old one.
   thisArray: function() {
-    console.log('[thisArray]', [this]);
+    //console.log('[thisArray]', [this]);
     return [this];
   },
   secondPanelEnabled: function (){
@@ -162,12 +165,15 @@ Template.appLayout.generateStylesheet = function (rightPanel) {
 
 
 Template.appLayout.layoutPanelsBasedOnBreakpoints = function () {
+  //console.log('Template.appLayout.layoutPanelsBasedOnBreakpoints');
+
   Session.set('transparencyDivHeight', $('#innerPanel').height() + 80);
 
   // two-page with sidebar
   // 2076 = 2 (768px panels) + 100px spacer + 2 margins at least 220px wide
   if (Session.get('appWidth') > 2096) {
-    Session.set("sidebarVisible", true);
+    //Session.set("sidebarVisible", true);
+    WestPanel.show();
 
     // one-page with sidebar
     // 1208 =  single 768px panel + 2 margins at least 220px wide + 20px sidebar spacer
@@ -176,22 +182,24 @@ Template.appLayout.layoutPanelsBasedOnBreakpoints = function () {
     // Session.set('useHorizontalFences', false);
     Session.set('navIsFullscreen', false);
     Session.set('wideCard', false);
+    WestPanel.show();
     // one-page
     // 768 =  single 768px panel
   } else if (Session.get('appWidth') > 768) {
-    Session.set("sidebarVisible", false);
+    //Session.set("sidebarVisible", false);
     Session.set('navIsFullscreen', true);
     Session.set('wideCard', true);
     WestPanel.show();
     // mobile
   } else {
-    Session.set("sidebarVisible", false);
+    //Session.set("sidebarVisible", false);
     Session.set('navIsFullscreen', true);
     Session.set('wideCard', true);
     WestPanel.hide();
     // Session.set('useHorizontalFences', true);
   }
 };
+
 
 
 // DEPRECATED
