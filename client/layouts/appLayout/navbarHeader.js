@@ -55,12 +55,12 @@ Template.appLayout.helpers({
     }
   },
   getSearchStyle: function (){
-    style = "";
+    var style = "";
+    var top = 0;
+
     if (Session.get('showNavbars')) {
-      style = "top: 50px;";
-    } else {
-      style = "top: 0px;";
-    }
+      top = top + 50;
+    };
     if (Session.get('showSearchCorner')) {
       style = style + "visibility: visible; background: linear-gradient(315deg, transparent 24px, rgba(255,255,255," + Session.get('glassOpacity') + ") 0) bottom right;";
     } else {
@@ -70,8 +70,11 @@ Template.appLayout.helpers({
     if (Session.get('showSearchbar')) {
       style = style + " height: 50px;";
     } else {
+      top = top - 50;
       style = style + " height: 0px;";
     }
+    style = style + " top: " + top + "px;";
+
     return style;
   },
   showSearchBar: function (){

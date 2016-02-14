@@ -20,22 +20,24 @@ Session.setDefault('LayoutConfig', {
     maxPageWidth: 768
   },
   defaults: {
+    appSurfaceOffset: false,
+    fullscreenNavbars: false,
+    fullscreen: false,
+    hasPagePadding: false,
+    hasPageVerticalPadding: false,
+    mainPanelIsCard: false,
+    pageWhite: true,
+    secondPanelEnabled: false,
     showNavbars: true,
     showSidebar: true,
     showSearchbar: false,
-    useHierarchicalLayout: false,
-    mainPanelIsCard: false,
-    wideCard: true,
-    useCardLayout: false,
-    hasPagePadding: false,
-    hasPageVerticalPadding: false,
     symmatricalPadding: false,
+    useHierarchicalLayout: false,
     useHorizontalFences: false,
     useVerticalFences: false,
-    secondPanelEnabled: false,
-    appSurfaceOffset: false,
+    useCardLayout: false,
     useEastFence: true,
-    pageWhite: true
+    wideCard: true
   }
 });
 
@@ -190,8 +192,8 @@ ActiveLayout = {
    * ```
    */
   getNavWidth: function (){
-    if (Session.get('navIsFullscreen')) {
-      return "width: 100%;";
+    if (Session.get('fullscreenNavbars')) {
+      return "width: 100%; position:fixed;";
     } else {
       if (Session.get('maxPageWidth')) {
         return "width: " + Session.get('maxPageWidth') + "px;";
