@@ -182,11 +182,13 @@ Template.appLayout.layoutPanelsBasedOnBreakpoints = function () {
     Session.set("sidebarVisible", false);
     Session.set('navIsFullscreen', true);
     Session.set('wideCard', true);
+    WestPanel.show();
     // mobile
   } else {
     Session.set("sidebarVisible", false);
     Session.set('navIsFullscreen', true);
     Session.set('wideCard', true);
+    WestPanel.hide();
     // Session.set('useHorizontalFences', true);
   }
 };

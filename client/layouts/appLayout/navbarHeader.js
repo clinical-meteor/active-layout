@@ -9,9 +9,14 @@ Template.appLayout.events({
       if (Session.get("appWidth") > 768) {
          Session.toggle('appSurfaceOffset');
          Session.toggle('useEastFence');
+        WestPanel.toggle();
+         //WestPanel.hide();
       } else {
         Session.toggle('useHorizontalFences');
+        WestPanel.toggle();
       }
+    } else {
+      WestPanel.show();
     }
   },
   'keyup #globalSearchBar' : function (){

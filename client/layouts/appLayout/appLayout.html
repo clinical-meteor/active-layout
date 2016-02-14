@@ -5,7 +5,7 @@
     {{> errorPanel }}
 
     {{> yield 'leftDock' }}
-    <aside id="westPanel" style="{{getWestPanelWidth}}">
+    <aside id="westPanel" style="{{getTopDistance}} {{getWestPanelWidth}} {{getWestPanelLeft}}">
       {{> yield 'westPanel' }}
     </aside>
 

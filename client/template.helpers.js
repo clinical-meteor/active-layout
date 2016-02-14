@@ -461,3 +461,14 @@ Template.registerHelper("symmetricalHeight", function () {
 
   return "height: " + (height - (topDistance * 2)) + "px;";
 });
+
+
+
+Session.setDefault("getWestPanelLeft", true);
+Template.registerHelper("getWestPanelLeft", function (){
+  if (Session.get('westPanelVisible')) {
+    return "left: 0px;";
+  } else {
+    return "left: -270px;";
+  }
+});
