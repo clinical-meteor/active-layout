@@ -32,7 +32,7 @@
             </div>
 
             {{#if secondPanelEnabled}}
-              <div id="secondPanel" class="unselectable helveticas layoutPanel" style="{{getRightPanelStyle}} {{getSecondTopDistance}} {{getPageHeight}}">
+              <div id="secondPanel" class="unselectable helveticas layoutPanel" style="{{getRightPanelStyle}} {{getSecondPanelWidth}} {{getSecondTopDistance}} {{getSecondPanelHeight}}">
                 {{> yield 'secondPage'}}
               </div>
             {{/if}}

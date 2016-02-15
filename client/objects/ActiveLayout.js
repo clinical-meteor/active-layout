@@ -229,6 +229,27 @@ ActiveLayout = {
       }
     }
   },
+  getSecondPanelWidth: function(){
+    if (Session.get('wideCard')) {
+      return "width: 100%;";
+    } else {
+      if (Session.get('maxPageWidth')) {
+
+        if (Session.get('wideSecondPanel')) {
+          var width = Session.get('appWidth') - Session.get('maxPageWidth') - 270 - 80 - 50;
+          return "width: " + width + "px;";
+        } else {
+          return "width: " + Session.get('maxPageWidth') + "px;";
+        }
+      } else {
+        var width = Session.get('appWidth') - (Session.get('westRule') + Session.get('eastRule'));
+        return "width: " + width + "px;";
+      }
+    }
+  },
+
+
+
   /**
    * @summary Get the modal dialog width.
    * @locus Client
@@ -295,16 +316,18 @@ ActiveLayout = {
   getAppTitle: function (){
     return Session.get('appTitle');
   },
+
+
   /**
-   * @summary Get the application page width.
+   * @summary Get height of the main panel.
    * @locus Client
    * @memberOf ActiveLayout
-   * @name height
+   * @name getPageHeight
    * @returns {StyleString}
    * @version 1.2.3
    * @example
    * ```html
-   * ActiveLayout.height();
+   * ActiveLayout.getPageHeight();
    * ```
    */
   getPageHeight: function (){
@@ -326,6 +349,40 @@ ActiveLayout = {
     return "height: " + pageHeight + "px;";
   },
 
+  /**
+   * @summary Get the height of the second panel.
+ * @locus Client
+   * @memberOf ActiveLayout
+   * @name getSecondPanelHeight
+   * @returns {StyleString}
+   * @version 1.2.3
+   * @example
+   * ```html
+   * ActiveLayout.getSecondPanelHeight();
+   * ```
+   */
+  getSecondPanelHeight: function(){
+
+    var pageHeight = Session.get('appHeight');
+
+    if (Session.get('showNavbars')) {
+      pageHeight = pageHeight - 50;
+    }
+
+    if (Session.get('showSearchbar')) {
+      pageHeight = pageHeight - 50;
+    }
+
+    if (Session.get('hasPageVerticalPadding')) {
+      pageHeight = pageHeight - 100;
+    }
+
+    if (Session.get("hasFooterPadding")){
+      pageHeight = pageHeight - 50;
+    }
+
+    return "height: " + pageHeight + "px;";
+  },
 
 
   /**

@@ -51,6 +51,13 @@ Template.registerHelper("getPageWidth", function (argument) {
   return ActiveLayout.getPageWidth();
 });
 
+Template.registerHelper("getSecondPanelWidth", function (argument) {
+  return ActiveLayout.getSecondPanelWidth();
+});
+
+
+
+
 
 /**
  * @summary Get the calculated width of the modal dialog.
@@ -90,7 +97,9 @@ Template.registerHelper("getModalWidth", function (argument) {
 Template.registerHelper("getPageHeight", function (argument) {
   return ActiveLayout.getPageHeight();
 });
-
+Template.registerHelper("getSecondPanelHeight", function (argument){
+  return ActiveLayout.getSecondPanelHeight();
+});
 /**
  * @summary Get the calculated height of the page.
  * @locus Client, Blaze Template

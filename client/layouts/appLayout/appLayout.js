@@ -111,7 +111,7 @@ Template.appLayout.helpers({
   },
   getRightPanelStyle: function () {
     if (Session.get('pageIsWide')) {
-      return "visibility: hidden; left: 1118px;";
+      return "visibility: hidden;";
       // return "visibility: hidden; left: " + (Session.get('appWidth') + 1024) + "px;";
     } else {
       return Style.parse(Template.appLayout.generateStylesheet(true));
@@ -135,13 +135,13 @@ Template.appLayout.generateStylesheet = function (rightPanel) {
     }
   }
 
-  if (Session.get('pageIsWide')) {
-    stylesheet.width = (Session.get('appWidth') - 400) + "px;";
-    stylesheet["max-width"] = (Session.get('appWidth') - 400) + "px;";
-  } else {
-    stylesheet.width = "100%;";
-    stylesheet["max-width"] = "768px;";
-  }
+  // if (Session.get('pageIsWide')) {
+  //   stylesheet.width = (Session.get('appWidth') - 400) + "px;";
+  //   stylesheet["max-width"] = (Session.get('appWidth') - 400) + "px;";
+  // } else {
+  //   stylesheet.width = "100%;";
+  //   stylesheet["max-width"] = "768px;";
+  // }
 
 
   var marginBottom = 0;
