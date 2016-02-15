@@ -4,16 +4,17 @@ Session.setDefault('showSearchCorner', false);
 
 
 Template.appLayout.events({
-  'click .sidebarToggle': function(){
+  'click .sidebarToggle': function(event, template){
+    event.stopPropagation();
+    console.log('click .sidebarToggle');
+
     if (Session.get("appWidth") > 1040) {
-      WestPanel.show();
       MainPanel.toggleFullscreen();
     } else {
       if (Session.get("appWidth") > 768) {
-        WestPanel.toggle();
         MainPanel.toggleFullscreen();
       } else {
-        WestPanel.toggle();
+        MainPanel.toggleSlide();
       }
     }
   },

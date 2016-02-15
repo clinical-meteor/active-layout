@@ -108,6 +108,9 @@ Template.registerHelper("getPageHeight", function (argument) {
 Template.registerHelper("pageColor", function (argument) {
   return ActiveLayout.getPageColor();
 });
+Template.registerHelper("getPageColor", function (argument) {
+  return ActiveLayout.getPageColor();
+});
 
 
 /**

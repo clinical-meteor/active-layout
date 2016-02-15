@@ -172,31 +172,25 @@ Template.appLayout.layoutPanelsBasedOnBreakpoints = function () {
   // two-page with sidebar
   // 2076 = 2 (768px panels) + 100px spacer + 2 margins at least 220px wide
   if (Session.get('appWidth') > 2096) {
-    //Session.set("sidebarVisible", true);
-    WestPanel.show();
+    //WestPanel.show();
+    MainPanel.pagescreen();
 
     // one-page with sidebar
     // 1208 =  single 768px panel + 2 margins at least 220px wide + 20px sidebar spacer
   } else if (Session.get('appWidth') > 1040) {
-    //Session.set('mainPanelLeft', (Session.get('appWidth') - 768) * 0.5);
-    // Session.set('useHorizontalFences', false);
-    Session.set('navIsFullscreen', false);
-    Session.set('wideCard', false);
-    WestPanel.show();
+    //WestPanel.show();
+    MainPanel.pagescreen();
+
     // one-page
     // 768 =  single 768px panel
   } else if (Session.get('appWidth') > 768) {
-    //Session.set("sidebarVisible", false);
-    Session.set('navIsFullscreen', true);
-    Session.set('wideCard', true);
-    WestPanel.show();
+    //WestPanel.show();
+    MainPanel.sidebarscreen();
+
     // mobile
   } else {
-    //Session.set("sidebarVisible", false);
-    Session.set('navIsFullscreen', true);
-    Session.set('wideCard', true);
-    WestPanel.hide();
-    // Session.set('useHorizontalFences', true);
+    //WestPanel.hide();
+    MainPanel.fullscreen();
   }
 };
 
