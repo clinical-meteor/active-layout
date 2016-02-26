@@ -83,17 +83,6 @@ Router.configure({
 });
 ````
 
-===============================
-#### Rulers
-
-
-**northRule**
-
-**southRule**
-
-**eastRule**
-
-**westRule**
 
 ===============================
 #### Default Properties
