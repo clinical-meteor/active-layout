@@ -9,6 +9,11 @@ Layout templates with keybindings and animations.
 meteor add clinical:active-layout
 ````
 
+===============================
+#### Design Tutorial  
+
+See the tutorial to get started!  
+[Designing a Card UI for Universal Apps](https://github.com/clinical-meteor/active-layout/blob/master/design/Readme.md)
 
 ===============================
 #### Configuration
