@@ -11,7 +11,7 @@ The cost of a universal template, of course, is that it is a different paradigm 
 ================
 ###Microservice Architecture  
 
-Our Universal Card UI is built upon a Microservice...  a set of technologies which coordinate data synchronization between the server and the client and renders that data to a screen.  It's recommended for Clinical Meteor apps that each HL7 resource be implemented in its own Mongo collection, with its own microservice.  That is, there will only be one data schema for all of the subsequent UI wireframes we create.  Assume we are using the DiagnosticOrder FHIR resource.  When we add the ``clinical:hl7-resource-diagnostic-order`` package to our app, it will add the following data infrastructure to our app, and it will be our responsibility to design theUi for it. 
+Our Universal Card UI is built upon a Microservice...  a set of technologies which coordinate data synchronization between the server and the client and renders that data to a screen.  It's recommended for Clinical Meteor apps that each HL7 resource be implemented in its own Mongo collection, with its own microservice.  That is, there will only be one data schema for all of the subsequent UI wireframes we create.  Assume we are using the DiagnosticOrder FHIR resource.  When we add the ``clinical:hl7-resource-diagnostic-order`` package to our app, it will add the following data infrastructure to our app, and it will be our responsibility to design the UI for it. 
 
 ![Microservice](https://raw.githubusercontent.com/clinical-meteor/cookbook/master/images/whitepapers/redwood/CollectionsAndModels.PNG)
 
