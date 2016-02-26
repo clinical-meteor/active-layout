@@ -9,12 +9,29 @@ We're also able to make this design decision because the healthcare market is hi
 The cost of a universal template, of course, is that it is a different paradigm of application design, and will feel unfamiliar until people are trained or work with it for awhile.
 
 ================
+###Microservice Architecture  
+
+Our Universal Card UI is built upon a Microservice...  a set of technologies which coordinate data synchronization between the server and the client and renders that data to a screen.  It's recommended for Clinical Meteor apps that each HL7 resource be implemented in its own Mongo collection, with its own microservice.  That is, there will only be one data schema for all of the subsequent UI wireframes we create.  Assume we are using the DiagnosticOrder FHIR resource.  When we add the ``clinical:hl7-resource-diagnostic-order`` package to our app, it will add the following data infrastructure to our app, and it will be our responsibility to design theUi for it. 
+
+![Microservice](https://raw.githubusercontent.com/clinical-meteor/cookbook/master/images/whitepapers/redwood/CollectionsAndModels.PNG)
+
+================
 ###Mobile - Alerts, Status Updates, Etc
+
+We begin the design process with the device that has the smallest screen footprint, and is most likely to be carried around by our users the most:  the phone.  Ask yourself 'what functions might my app need when mobile?'  This is a useful excercize, even if your app is likely to be primarily used on the desktop.  The ergonomics of mobile devices don't make them good for data analysis, text authoring, and similar tasks....  but they are great for alerts and status updates.  In our DiagnisticOrder example, we might want "Today's Tasks" on our phone.  Also note the header and footer.  We have three components on this screen: 
+
+- [] list
+- [] header
+- [] footer
 
 ![iPhone-Portrait-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPhone6%20-%20Portrait%20-%20Fullscreen.png)
 
 ================
 ###Mobile - Virtual a Paper - Data Collection and Input
+
+The next step in the design process is to consider a slightly larger device...  a tablet or digital paper.  This is a particularly important use-case, because healthcare has traditionally been a paper-based industry, we are using a document oriented database, and we are implementing a card UI.  Consider what the mobile app would look like if given a little extra space and rendered on a piece of paper.  In our example, we can see how the tablet version has extra information in our task list.
+
+- [] breakpoint
 
 ![iPad-Portrait-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPad%20-%20Portrait%20-%20Fullscreen.png)
 
@@ -82,7 +99,6 @@ The cost of a universal template, of course, is that it is a different paradigm 
 ####Background
 
 ####Opacity
-
 
 
 
