@@ -20,9 +20,9 @@ Our Universal Card UI is built upon a Microservice...  a set of technologies whi
 
 We begin the design process with the device that has the smallest screen footprint, and is most likely to be carried around by our users the most:  the phone.  Ask yourself 'what functions might my app need when mobile?'  This is a useful excercize, even if your app is likely to be primarily used on the desktop.  The ergonomics of mobile devices don't make them good for data analysis, text authoring, and similar tasks....  but they are great for alerts and status updates.  In our DiagnisticOrder example, we might want "Today's Tasks" on our phone.  Also note the header and footer.  We have three components on this screen: 
 
-- [] list
-- [] header
-- [] footer
+- [ ] list
+- [ ] header
+- [ ] footer
 
 ![iPhone-Portrait-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPhone6%20-%20Portrait%20-%20Fullscreen.png)
 
@@ -31,7 +31,7 @@ We begin the design process with the device that has the smallest screen footpri
 
 The next step in the design process is to consider a slightly larger device...  a tablet or digital paper.  This is a particularly important use-case, because healthcare has traditionally been a paper-based industry, we are using a document oriented database, and we are implementing a card UI.  Consider what the mobile app would look like if given a little extra space and rendered on a piece of paper.  If there is extra information to be displayed on a tablet, one would want to specify a breakpoint.  Generally, however, it is easiest to simply give the mobile view a little extra breathing room.
 
-- [] phone breakpoint
+- [ ] phone breakpoint
 
 ![iPad-Portrait-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPad%20-%20Portrait%20-%20Fullscreen.png)
 
@@ -40,8 +40,8 @@ The next step in the design process is to consider a slightly larger device...  
 
 When the tablet is rotated sideways, we have the choice of displaying our checklist at 100% of the screen width, or to keep the same width as the tablet in portrait view.  Begin by simply designing a wireframe that's 100% width.  In our checklist example, we could choose to start displaying extra information here; although it's common for some apps to switch to a completely different workflow and present a data visualization preview.  This is a good place to display a single full-page chart or 3D rendering engine to display radiology images, for example.
 
-- [] tablet portrait breakpoint
-- [] onorientationchange
+- [ ] tablet portrait breakpoint
+- [ ] onorientationchange
 
 ![iPad-Landscape-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPad%20-%20Landscape%20-%20Fullscreen.png)
 
@@ -50,8 +50,8 @@ When the tablet is rotated sideways, we have the choice of displaying our checkl
 
 In Clinical Meteor, however, we are often concerned with the use-case of replacing paper workflows.  As such, one particularly important design for the tablet in landscape mode is where we keep the dimensions of our page constant and introduce a sidebar.  We are able to do this by introducing the notion of a viewport, virtual canvas, and panels.  In effect, our task list is no longer simply the dimensions of our screen.  Rather, we have a bigger workspace to design with.  And it's that bigger workspace that we will eventually apply origami to and create animation effects with.  In our example here, we fill the extra space with a sidebar.  We also attach an event to our header that toggles the panel between fullscreen and pagescreen modes.
 
-- [] tablet landscape breakpoint
-- [] sidebar
+- [ ] tablet landscape breakpoint
+- [ ] sidebar
 
 ![iPad-Landscape-Pagescreen](https://github.com/clinical-meteor/clinical-active-layout/blob/master/design/iPad%20-%20Landscape%20-%20Pagescreen.png)
 
@@ -59,7 +59,11 @@ In Clinical Meteor, however, we are often concerned with the use-case of replaci
 ================
 ###Office - Data Management 
 
-Going to yet a larger device, we now consider the application as it might run on a desktop computer.
+Going to yet a larger device, we now consider the application as it might run on a desktop computer.  In this situation, it becomes increasingly likely that our application may be connected to multiple monitors or controlling external devices.  That is, it's not simply working as a checklist, but as a workqueue in a shared environment.  For this use-case, we layer in user management controls (so others know who we're logged in as), and a breakpoint to display workqueue controls.
+
+- [ ] desktop breakpoint
+- [ ] desktop workqueue controls
+- [ ] user login header controls
 
 ![Desktop-Landscape-Pagescreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Pagescreen.png)
 
@@ -71,13 +75,14 @@ Going to yet a larger device, we now consider the application as it might run on
 ![Desktop-Landscape-Fullscreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Fullscreen%20-%20Navbars.png)
 
 ================
-###Public Education & Collaboration
+###Public Education & Collaboration  
+
+
+![Thunderbolt-Pagescreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
 
 ![Thunderbolt-Pagescreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen.png)
 
-![Thunderbolt-Pagescreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
 
-![Thunderbolt-Pagescreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
 
 ================
 ###Collaborative Data Analysis
@@ -112,7 +117,6 @@ Going to yet a larger device, we now consider the application as it might run on
 ####Background
 
 ####Opacity
-
 
 
 
