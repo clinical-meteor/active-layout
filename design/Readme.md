@@ -29,24 +29,37 @@ We begin the design process with the device that has the smallest screen footpri
 ================
 ###Mobile - Virtual a Paper - Data Collection and Input
 
-The next step in the design process is to consider a slightly larger device...  a tablet or digital paper.  This is a particularly important use-case, because healthcare has traditionally been a paper-based industry, we are using a document oriented database, and we are implementing a card UI.  Consider what the mobile app would look like if given a little extra space and rendered on a piece of paper.  In our example, we can see how the tablet version has extra information in our task list.
+The next step in the design process is to consider a slightly larger device...  a tablet or digital paper.  This is a particularly important use-case, because healthcare has traditionally been a paper-based industry, we are using a document oriented database, and we are implementing a card UI.  Consider what the mobile app would look like if given a little extra space and rendered on a piece of paper.  If there is extra information to be displayed on a tablet, one would want to specify a breakpoint.  Generally, however, it is easiest to simply give the mobile view a little extra breathing room.
 
-- [] breakpoint
+- [] phone breakpoint
 
 ![iPad-Portrait-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPad%20-%20Portrait%20-%20Fullscreen.png)
 
 ================
-###Mobile - Contextual Data Input 
-
-![iPad-Landscape-Pagescreen](https://github.com/clinical-meteor/clinical-active-layout/blob/master/design/iPad%20-%20Landscape%20-%20Pagescreen.png)
-
-================
 ###Mobile - Data Visualization Preview
+
+When the tablet is rotated sideways, we have the choice of displaying our checklist at 100% of the screen width, or to keep the same width as the tablet in portrait view.  Begin by simply designing a wireframe that's 100% width.  In our checklist example, we could choose to start displaying extra information here; although it's common for some apps to switch to a completely different workflow and present a data visualization preview.  This is a good place to display a single full-page chart or 3D rendering engine to display radiology images, for example.
+
+- [] tablet portrait breakpoint
+- [] onorientationchange
 
 ![iPad-Landscape-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/iPad%20-%20Landscape%20-%20Fullscreen.png)
 
 ================
+###Mobile - Contextual Data Input 
+
+In Clinical Meteor, however, we are often concerned with the use-case of replacing paper workflows.  As such, one particularly important design for the tablet in landscape mode is where we keep the dimensions of our page constant and introduce a sidebar.  We are able to do this by introducing the notion of a viewport, virtual canvas, and panels.  In effect, our task list is no longer simply the dimensions of our screen.  Rather, we have a bigger workspace to design with.  And it's that bigger workspace that we will eventually apply origami to and create animation effects with.  In our example here, we fill the extra space with a sidebar.  We also attach an event to our header that toggles the panel between fullscreen and pagescreen modes.
+
+- [] tablet landscape breakpoint
+- [] sidebar
+
+![iPad-Landscape-Pagescreen](https://github.com/clinical-meteor/clinical-active-layout/blob/master/design/iPad%20-%20Landscape%20-%20Pagescreen.png)
+
+
+================
 ###Office - Data Management 
+
+Going to yet a larger device, we now consider the application as it might run on a desktop computer.
 
 ![Desktop-Landscape-Pagescreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Pagescreen.png)
 
@@ -99,7 +112,6 @@ The next step in the design process is to consider a slightly larger device...  
 ####Background
 
 ####Opacity
-
 
 
 
