@@ -95,38 +95,11 @@ Generally speaking, in the healthcare and clinical environments, large screens a
 ================
 ###Collaborative Data Analysis
 
-Alternatively, you may want a second panel and keep your application in positive space, rather than negative space.  Again, the canvas is there for your ch
+Alternatively, you may want a second panel and keep your application in positive space, rather than negative space.  Again, the canvas is there for whatever use you can dream...  patient dashboards, radiology images, epidemiology graphing, accounting spreadsheets, an in-app webbrowser using iFrames...  whatever you wish.
 
 ![Thunderbolt - Two Panel - Canvas](https://raw.githubusercontent.com/clinical-meteor/active-layout/master/design/Desktop%20-%20Two%20Panel.png)
 
 
-
-================
-###Layout Use Cases
-
-####Navbars
-
-####Global Search/Input
-
-####Rulers
-
-####Device Support
-
-####Card Layout
-
-####Fullscreen/Pagescreen
-
-
-================
-###Theming Use Cases
-
-####Darkroom Mode
-
-####Brand Theming
-
-####Background
-
-####Opacity
 
 
 
