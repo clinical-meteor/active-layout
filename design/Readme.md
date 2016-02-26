@@ -81,16 +81,21 @@ An extremely common use-case is simply that of a full-screen laptop or desktop c
 ================
 ###Public Education & Collaboration  
 
+Of course, device sizes don't simply stop at laptops and desktop.  There is an entire industry that caters to HDTV and ultra-high resolution screens, that encompass Thunderbolt monitors, projection monitors, and video walls.  It's always nice to work with such equipment, because it affords plenty of space to display widgets, controls, and components.  The downside, of course is that you have to go to the equipment.
 
+Generally speaking, in the healthcare and clinical environments, large screens are used in educational, collaboration, and data analysis contexts.  Unless there are compelling use cases that specify otherwise, we recommend starting with the pagescreen mode, and using it to establishing some workflow for the canvas in the background.  This layout is particularly well suited to have medical illustrations, video, or 3D rendering engines in the background negative space.  The pagescreen can be toggled to have opacity for augmented reality interfaces, and can be toggled out of the way with keybindings.
 
-![Thunderbolt-Pagescreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
+- [ ] video/illustrations/engines
+- [ ] hotkeys 
+- [ ] haptics
 
-![Thunderbolt-Pagescreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen.png)
-
+![Thunderbolt-Page Screen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
 
 
 ================
 ###Collaborative Data Analysis
+
+Alternatively, you may want a second panel and keep your application in positive space, rather than negative space.  Again, the canvas is there for your ch
 
 ![Thunderbolt - Two Panel - Canvas](https://raw.githubusercontent.com/clinical-meteor/active-layout/master/design/Desktop%20-%20Two%20Panel.png)
 
@@ -122,7 +127,6 @@ An extremely common use-case is simply that of a full-screen laptop or desktop c
 ####Background
 
 ####Opacity
-
 
 
 
