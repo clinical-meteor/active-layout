@@ -51,6 +51,7 @@ When the tablet is rotated sideways, we have the choice of displaying our checkl
 In Clinical Meteor, however, we are often concerned with the use-case of replacing paper workflows.  As such, one particularly important design for the tablet in landscape mode is where we keep the dimensions of our page constant and introduce a sidebar.  We are able to do this by introducing the notion of a viewport, virtual canvas, and panels.  In effect, our task list is no longer simply the dimensions of our screen.  Rather, we have a bigger workspace to design with.  And it's that bigger workspace that we will eventually apply origami to and create animation effects with.  In our example here, we fill the extra space with a sidebar.  We also attach an event to our header that toggles the panel between fullscreen and pagescreen modes.
 
 - [ ] tablet landscape breakpoint
+- [ ] header toggle
 - [ ] sidebar
 
 ![iPad-Landscape-Pagescreen](https://github.com/clinical-meteor/clinical-active-layout/blob/master/design/iPad%20-%20Landscape%20-%20Pagescreen.png)
@@ -68,14 +69,18 @@ Going to yet a larger device, we now consider the application as it might run on
 ![Desktop-Landscape-Pagescreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Pagescreen.png)
 
 ================
-###Office - Data Visualization 
+###Office - Fullscreen / Data Visualization 
 
-![Desktop-Landscape-Fullscreen](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Fullscreen.png)
+An extremely common use-case is simply that of a full-screen laptop or desktop computer.  Many stakeholders will begin the design process here, due to equipment availability at their workplace, even though it is not advised.  Common mistakes that occur when beginning with a laptop full-screen layout are static menubars and sidebars, and components that don't resize to mobile.  Lists and tables and grids are all particularly effective, as long as they have breakpoints for displaying on smaller screens.  We recommend going from desktop pagescreen to fullscreen mode by simply toggling the viewport.  If done correctly in the steps outlined above, this is as simple as adjusting the hem on a pair of pants. 
+
+- [ ] fullscreen toggle
+- [ ] fullscreen hotkey
 
 ![Desktop-Landscape-Fullscreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Desktop%20-%20Landscape%20-%20Fullscreen%20-%20Navbars.png)
 
 ================
 ###Public Education & Collaboration  
+
 
 
 ![Thunderbolt-Pagescreen-Navbars](https://raw.githubusercontent.com/clinical-meteor/clinical-active-layout/master/design/Thunderbolt%20-%20Pagescreen%20-%20Navbars.png)
@@ -117,7 +122,6 @@ Going to yet a larger device, we now consider the application as it might run on
 ####Background
 
 ####Opacity
-
 
 
 
