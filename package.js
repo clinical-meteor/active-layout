@@ -22,7 +22,7 @@ Package.onUse(function (api) {
   api.use('clinical:user-model@1.3.1');
   api.use('clinical:keybindings@1.2.6');
   api.use('clinical:theming@0.1.0');
-  api.use('clinical:glass-ui@1.3.9');
+  api.use('clinical:glass-ui@1.3.10');
   api.use('clinical:error-pages@0.1.1');
 
   api.imply('clinical:router');

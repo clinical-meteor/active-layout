@@ -1,7 +1,7 @@
 
 <template name="appLayout">
 
-  <div id="appLayout" style="{{getAppRightDistance}}">
+  <div id="appLayout" style="{{getAppRightDistance}} {{isDarkroom}}">
     {{> errorPanel }}
 
     {{> yield 'leftDock' }}
@@ -10,7 +10,7 @@
     </aside>
 
     <div id="navbarLayer" style="{{appSurfaceOffset}} {{getLeftTransform}}">
-      <header id="navbarHeader" class="sidebarToggle helveticas {{getTheme}}" style="{{getOpacity}} {{isVisible}} {{getNavWidth}} {{getBackgroundColor 'colorE'}} ">
+      <header id="navbarHeader" class="sidebarToggle helveticas" style="{{getOpacity}} {{isVisible}} {{getNavWidth}} {{getBackgroundColor 'colorE'}} ">
         {{> yield 'header'}}
       </header>
 
@@ -51,7 +51,7 @@
         </div>
 
 
-      <footer id="navbarFooter" class="unselectable {{getTheme}}" style="{{getOpacity}} {{getFooterHeight}} {{getNavWidth}} {{getBackgroundColor 'colorE'}} ">
+      <footer id="navbarFooter" class="unselectable" style="{{getOpacity}} {{getFooterHeight}} {{getNavWidth}} {{getBackgroundColor 'colorE'}} ">
         {{> yield 'footer' }}
 
         {{#if showHelp}}
