@@ -346,7 +346,7 @@ ActiveLayout = {
       pageHeight = pageHeight - 100;
     }
 
-    return "height: " + pageHeight + "px;";
+    return "min-height: " + pageHeight + "px;";
   },
 
   /**
