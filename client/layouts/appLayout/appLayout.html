@@ -24,7 +24,7 @@
           <div class="hidden">{{resized}}</div>
 
             <div id="mainPanel" class="helveticas layoutPanel" style="{{getTopDistance}} {{getPageWidth}} {{getPageHeight}} {{getPageColor}}">
-              <div id="contentAnimation">
+              <div id="contentAnimation" style="{{getPageHeight}}">
                 {{#each thisArray}}
                   {{> yield}}
                 {{/each}}
