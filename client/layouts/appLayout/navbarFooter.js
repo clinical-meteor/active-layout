@@ -17,9 +17,9 @@ Template.appLayout.helpers({
   },
   getFooterHeight: function (){
     if (Session.get('showNavbars')) {
-      return "height: 50px;";
+      return "height: 50px; border-top: 1px solid lightgray;";
     } else {
-      return "height: 0px;";
+      return "height: 0px; border-top: none;";
     }
   }
 });

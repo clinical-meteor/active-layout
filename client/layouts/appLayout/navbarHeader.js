@@ -81,11 +81,11 @@ Template.appLayout.helpers({
   showSearchBar: function (){
     return Session.get('showSearchbar');
   },
-  isVisible: function (){
+  getHeaderHeight: function (){
     if (Session.get('showNavbars')) {
-      return "height: 50px; top: 0px; ";
+      return "height: 50px; top: 0px; border-bottom: 1px solid lightgray;";
     } else {
-      return "height: 0px; top: -50px; ";
+      return "height: 0px; top: -50px; border-bottom: none;";
     }
   },
   getTitleText: function () {
