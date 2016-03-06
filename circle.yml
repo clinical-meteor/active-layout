@@ -54,6 +54,9 @@ dependencies:
     - cd helloworld && git clone http://github.com/clinical-meteor/active-layout packages/active-layout
     - cd helloworld && ls -la
     - cd helloworld/packages && ls -la
+    - cd helloworld && starrynight scaffold --framework nightwatch
+    - cp tests/nightwatch/* helloworld/tests/nightwatch/walkthroughs
+    - cd helloworld/tests/nightwatch/walkthroughs && ls -la
     - cd helloworld && starrynight autoconfig
     - cd helloworld && cat .meteor/nightwatch.json
 
