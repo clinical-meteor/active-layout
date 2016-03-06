@@ -46,6 +46,7 @@ test:
     - sleep 80
   override:
     - cd helloworld && starrynight run-tests --type package-verification
+    - cd helloworld && starrynight run-tests --type validation
 
 ## Customize deployment commands
 #deployment:
