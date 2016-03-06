@@ -50,7 +50,7 @@ module.exports = {
   "sidebar should be hidden in phone mode" : function (client) {
     client
       .resizeWindow(480, 800)
-        .verify.visible("#sidebarToggle")
+        .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
         // .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 0, 0)")
         .verify.cssProperty("#navbarLayer", "left", "0px")
@@ -59,7 +59,7 @@ module.exports = {
   "sidebar should be hidden in tablet portrait mode" : function (client) {
     client
       .resizeWindow(768, 1024)
-        .verify.visible("#sidebarToggle")
+        .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
         // .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 0, 0)")
         .verify.cssProperty("#navbarLayer", "left", "0px")
@@ -68,7 +68,7 @@ module.exports = {
   "sidebar should be visible in landscape mode" : function (client) {
     client
       .resizeWindow(1024, 768)
-        .verify.visible("#sidebarToggle")
+        .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
         .verify.cssProperty("#navbarLayer", "left", "270px")
         // .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 0, 0)")
@@ -77,35 +77,35 @@ module.exports = {
   "anonymous user - sidebar toggle opens and closes in phone mode" : function (client) {
     client
       .resizeWindow(480, 800)
-        .verify.visible("#sidebarToggle")
+        .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
         // .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 0, 0)")
         .verify.cssProperty("#navbarLayer", "left", "0px")
         .saveScreenshot("tests/nightwatch/screenshots/layout/Tablet-Phone-Closed.png")
-        .click("#sidebarToggle").pause(500)
+        .click("#navbarHeader").pause(500)
         .verify.cssProperty("#navbarLayer", "left", "0px")
         .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 270, 0)")
-        .click("#sidebarToggle").pause(500)
+        .click("#navbarHeader").pause(500)
         .saveScreenshot("tests/nightwatch/screenshots/layout/Tablet-Phone-Open.png")
   },
   "anonymous user - sidebar toggle opens and closes in portrait mode" : function (client) {
     client
       .resizeWindow(768, 1024)
-        .verify.visible("#sidebarToggle")
+        .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
         // .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 0, 0)")
         .saveScreenshot("tests/nightwatch/screenshots/layout/Tablet-Portrait-Pagescreen.png")
         .verify.cssProperty("#navbarLayer", "left", "0px")
-        .click("#sidebarToggle").pause(500)
+        .click("#navbarHeader").pause(500)
         .verify.cssProperty("#navbarLayer", "left", "0px")
         .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 270, 0)")
         .saveScreenshot("tests/nightwatch/screenshots/layout/Tablet-Portrait-Fullscreen.png")
-        .click("#sidebarToggle").pause(500)
+        .click("#navbarHeader").pause(500)
   },
   "anonymous user - sidebar toggle switches between pagescreen and fullscreen in landscape mode" : function (client) {
     client
       .resizeWindow(1024, 768)
-        .verify.visible("#sidebarToggle")
+        .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
 
         // start out in pagescreen mode
@@ -114,14 +114,14 @@ module.exports = {
         .saveScreenshot("tests/nightwatch/screenshots/layout/Tablet-Landscape-Pagescreen.png")
 
         // toggle and go into fullscreen mode
-        .click("#sidebarToggle").pause(500)
+        .click("#navbarHeader").pause(500)
         .verify.cssProperty("#navbarLayer", "left", "0px")
         .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 0, 0)")
         .saveScreenshot("tests/nightwatch/screenshots/layout/Tablet-Landscape-Fullscreen.png")
         .pause(1000)
 
         // back to pagescreen
-        .click("#sidebarToggle").pause(500)
+        .click("#navbarHeader").pause(500)
         .verify.cssProperty("#navbarLayer", "left", "270px")
         .verify.cssProperty("#navbarLayer", "transform", "none")
   },
