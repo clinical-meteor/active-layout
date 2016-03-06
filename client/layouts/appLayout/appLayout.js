@@ -128,10 +128,10 @@ Template.appLayout.generateStylesheet = function (rightPanel) {
   if (rightPanel) {
     if (Session.get('appWidth') > 1886) {
       stylesheet.visibility = "visible;";
-      stylesheet.left = '1118px;';
+      stylesheet.left = '1088px;';
     } else {
       stylesheet.visibility = "hidden;";
-      stylesheet.left = '1118px;';
+      stylesheet.left = '1088px;';
     }
   }
 
