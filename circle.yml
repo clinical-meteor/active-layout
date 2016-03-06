@@ -44,21 +44,22 @@ dependencies:
 
 
   override:
-    #- meteor || curl https://install.meteor.com | /bin/sh
-    #- npm install starrynight -g
+    # it would be nice to just set the build dir to 'helloworld', but then we don't get the different branches
+    # so we just have to be a bit verbose when building our integration app
     - meteor create --release METEOR@1.1.0.3 helloworld
     - cd helloworld
-    - cd helloworld && ls -la
+
     - cd helloworld && rm helloworld.*
-    - cd helloworld && meteor add anti:gagarin@0.4.11 session meteor-platform clinical:theming clinical:default-theme clinical:router clinical:router-default-config clinical:active-layout clinical:active-layout-reset clinical:active-layout-pagescreen-config grove:less
-    - cd helloworld && git clone http://github.com/clinical-meteor/active-layout packages/active-layout
-    - cd helloworld && ls -la
-    - cd helloworld/packages && ls -la
+    - cd helloworld && git clone http://github.com/clinical-meteor/active-layout packages/active-layout && clinical:active-layout
+    - cd helloworld && git clone http://github.com/clinical-meteor/sidebar packages/sidebar && meteor add clinical:sidebar
+
+    - cd helloworld && meteor add anti:gagarin@0.4.11 session meteor-platform clinical:theming clinical:default-theme clinical:router clinical:router-default-config clinical:active-layout-reset clinical:active-layout-pagescreen-config grove:less
+
     - cd helloworld && starrynight scaffold --framework nightwatch
     - cp tests/nightwatch/* helloworld/tests/nightwatch/walkthroughs
-    - cd helloworld/tests/nightwatch/walkthroughs && ls -la
     - cd helloworld && starrynight autoconfig
     - cd helloworld && cat .meteor/nightwatch.json
+
 
 ## Customize test commands
 test:
