@@ -49,7 +49,7 @@ module.exports = {
   },
   "sidebar should be hidden in phone mode" : function (client) {
     client
-      .resizeWindow(480, 800)
+      .resizeWindow(480, 800).pause(500)
         .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
         // .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 0, 0)")
@@ -58,7 +58,7 @@ module.exports = {
   },
   "sidebar should be hidden in tablet portrait mode" : function (client) {
     client
-      .resizeWindow(768, 1024)
+      .resizeWindow(768, 1024).pause(500)
         .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
         // .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 0, 0)")
@@ -67,7 +67,7 @@ module.exports = {
   },
   "sidebar should be visible in landscape mode" : function (client) {
     client
-      .resizeWindow(1024, 768)
+      .resizeWindow(1024, 768).pause(500)
         .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
         .verify.cssProperty("#navbarLayer", "left", "270px")
@@ -76,7 +76,7 @@ module.exports = {
   },
   "anonymous user - sidebar toggle opens and closes in phone mode" : function (client) {
     client
-      .resizeWindow(480, 800)
+      .resizeWindow(480, 800).pause(500)
         .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
         // .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 0, 0)")
@@ -90,7 +90,7 @@ module.exports = {
   },
   "anonymous user - sidebar toggle opens and closes in portrait mode" : function (client) {
     client
-      .resizeWindow(768, 1024)
+      .resizeWindow(768, 1024).pause(500)
         .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
         // .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 0, 0)")
@@ -104,7 +104,7 @@ module.exports = {
   },
   "anonymous user - sidebar toggle switches between pagescreen and fullscreen in landscape mode" : function (client) {
     client
-      .resizeWindow(1024, 768)
+      .resizeWindow(1024, 768).pause(500)
         .verify.visible("#navbarHeader")
         .verify.elementPresent("#navbarLayer")
 
@@ -127,7 +127,7 @@ module.exports = {
   },
   "cmd+ctrl+n should hide/show navbar": function(client){
     client
-      .resizeWindow(1024,768)
+      .resizeWindow(1024,768).pause(500)
       // navbars should be visible
       .verify.elementPresent("#navbarHeader")
       .verify.cssProperty("#navbarHeader", "height", "50px")

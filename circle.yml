@@ -9,7 +9,7 @@ machine:
   environment:
     CIRCLE_ENV: test
     CXX: g++-4.8
-    DISPLAY: :99.0
+    DISPLAY: :99
     NPM_PREFIX: /home/ubuntu/nvm/v0.10.33
 
 
