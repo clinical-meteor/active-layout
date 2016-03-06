@@ -73,7 +73,7 @@ test:
 
 general:
   artifacts:
-    - "./tests/nightwatch/screenshots" # relative to the build directory
+    - "helloworld/tests/nightwatch/screenshots" # relative to the build directory
 
 ## Customize deployment commands
 #deployment:
