@@ -135,15 +135,6 @@ Template.appLayout.generateStylesheet = function (rightPanel) {
     }
   }
 
-  // if (Session.get('pageIsWide')) {
-  //   stylesheet.width = (Session.get('appWidth') - 400) + "px;";
-  //   stylesheet["max-width"] = (Session.get('appWidth') - 400) + "px;";
-  // } else {
-  //   stylesheet.width = "100%;";
-  //   stylesheet["max-width"] = "768px;";
-  // }
-
-
   var marginBottom = 0;
 
   if (Session.get('mainPanelIsCard')) {
@@ -195,14 +186,18 @@ Template.appLayout.layoutPanelsBasedOnBreakpoints = function () {
 };
 
 
-
+//==================================================================================================
 // DEPRECATED
 Template.appLayout.layout = function (timeout) {
-  Template.appLayout.layoutPanelsBasedOnBreakpoints();
+  console.error("Template.appLayout.layout has been deprecated.");
+  console.error("Please use Template.appLayout.layoutPanelsBasedOnBreakpoints();");
+  // Template.appLayout.layoutPanelsBasedOnBreakpoints();
 };
 // DEPRECATED
 Template.appLayout.delayedLayout = function (timeout) {
-  Meteor.setTimeout(function () {
-    Template.appLayout.layoutPanelsBasedOnBreakpoints();
-  }, timeout);
+  console.error("Template.appLayout.layout has been deprecated.");
+  console.error("Please use Template.appLayout.layoutPanelsBasedOnBreakpoints();");
+  // Meteor.setTimeout(function () {
+  //   Template.appLayout.layoutPanelsBasedOnBreakpoints();
+  // }, timeout);
 };

@@ -236,7 +236,7 @@ ActiveLayout = {
       if (Session.get('maxPageWidth')) {
 
         if (Session.get('wideSecondPanel')) {
-          var width = Session.get('appWidth') - Session.get('maxPageWidth') - 270 - 80 - 50;
+          var width = Session.get('appWidth') - Session.get('maxPageWidth') - 270 - 50 - 50;
           return "width: " + width + "px;";
         } else {
           return "width: " + Session.get('maxPageWidth') + "px;";
