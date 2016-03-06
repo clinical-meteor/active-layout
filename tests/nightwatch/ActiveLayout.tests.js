@@ -94,8 +94,7 @@ module.exports = {
         .verify.visible("#sidebarToggle")
         .verify.elementPresent("#navbarLayer")
         // .verify.cssProperty("#navbarLayer", "transform", "matrix(1, 0, 0, 1, 0, 0)")
-        .saveScreenshot("tests/nightwatch/screenshots/layout/Tablet-Portrait-Pagescreen
-        .png")
+        .saveScreenshot("tests/nightwatch/screenshots/layout/Tablet-Portrait-Pagescreen.png")
         .verify.cssProperty("#navbarLayer", "left", "0px")
         .click("#sidebarToggle").pause(500)
         .verify.cssProperty("#navbarLayer", "left", "0px")
