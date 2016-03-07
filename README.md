@@ -96,20 +96,14 @@ Slide the Searchbar into the ViewPort and display it's contents.
 **showSidebar**
 Slide the WestPanel into the ViewPort and display it's contents.  This simply adjusts the left location of the sidebar.  If you don't want a sidebar rendered at all, you can omit it from the Router map.
 
+**useHierarchicalLayout**  
+When set, the second page will be offset by 50px, creating a hierarchical layout.  Used for Star Trek and Minority Report layouts.
 
+**useHorizontalFences**  
+Override the default layout logic, and use the East/West fence settings.  
 
-**useCardLayout**
-Determines whether the navbar
-
-
-useHierarchicalLayout: false,
-mainPanelIsCard: false,
-wideCard: true,
-hasPagePadding: false,
-symmatricalPadding: false,
-hasPageVerticalPadding: false,
-useHorizontalFences: true,
-useVerticalFences: false
+**useVerticalFences**
+Override the default layout logic, and use the North/South fence settings.  
 
 
 
