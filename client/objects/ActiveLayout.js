@@ -22,6 +22,7 @@ Session.setDefault('LayoutConfig', {
   defaults: {
     appSurfaceOffset: false,
     fullscreenNavbars: false,
+    fullscreenNavbarsOverride: false,
     fullscreen: false,
     hasPagePadding: false,
     hasPageVerticalPadding: false,
@@ -159,6 +160,11 @@ ActiveLayout = {
         if (typeof properties.defaults.fullscreenNavbars === "boolean") {
           Session.set('fullscreenNavbars', properties.defaults.fullscreenNavbars);
         }
+        if (typeof properties.defaults.fullscreenNavbarsOverride === "boolean") {
+          Session.set('fullscreenNavbarsOverride', properties.defaults.fullscreenNavbarsOverride);
+        }
+
+
         if (typeof properties.defaults.navIsFullscreen === "boolean") {
           Session.set('navIsFullscreen', properties.defaults.navIsFullscreen);
         }
@@ -192,15 +198,19 @@ ActiveLayout = {
    * ```
    */
   getNavWidth: function (){
-    if (Session.get('fullscreenNavbars')) {
+    if (Session.get('fullscreenNavbarsOverride')) {
       return "width: 100%; position:fixed;";
     } else {
-      if (Session.get('maxPageWidth')) {
-        return "width: " + Session.get('maxPageWidth') + "px;";
+      if (Session.get('fullscreenNavbars')) {
+        return "width: 100%; position:fixed;";
       } else {
-        // synonymous with useHorizontalFences
-        var width = Session.get('appWidth') - (Session.get('westRule') + Session.get('eastRule'));
-        return "width: " + width + "px;";
+        if (Session.get('maxPageWidth')) {
+          return "width: " + Session.get('maxPageWidth') + "px;";
+        } else {
+          // synonymous with useHorizontalFences
+          var width = Session.get('appWidth') - (Session.get('westRule') + Session.get('eastRule'));
+          return "width: " + width + "px;";
+        }
       }
     }
   },
