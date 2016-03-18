@@ -160,28 +160,34 @@ Template.appLayout.layoutPanelsBasedOnBreakpoints = function () {
 
   Session.set('transparencyDivHeight', $('#innerPanel').height() + 80);
 
-  // two-page with sidebar
-  // 2076 = 2 (768px panels) + 100px spacer + 2 margins at least 220px wide
-  if (Session.get('appWidth') > 2096) {
-    //WestPanel.show();
-    MainPanel.pagescreen();
+  if (Session.get('fullscreenOverride')) {
+      MainPanel.fullscreen();
 
-    // one-page with sidebar
-    // 1208 =  single 768px panel + 2 margins at least 220px wide + 20px sidebar spacer
-  } else if (Session.get('appWidth') > 1040) {
-    //WestPanel.show();
-    MainPanel.pagescreen();
-
-    // one-page
-    // 768 =  single 768px panel
-  } else if (Session.get('appWidth') > 768) {
-    //WestPanel.show();
-    MainPanel.sidebarscreen();
-
-    // mobile
   } else {
-    //WestPanel.hide();
-    MainPanel.fullscreen();
+    // two-page with sidebar
+    // 2076 = 2 (768px panels) + 100px spacer + 2 margins at least 220px wide
+    if (Session.get('appWidth') > 2096) {
+      //WestPanel.show();
+      MainPanel.pagescreen();
+
+      // one-page with sidebar
+      // 1208 =  single 768px panel + 2 margins at least 220px wide + 20px sidebar spacer
+    } else if (Session.get('appWidth') > 1040) {
+      //WestPanel.show();
+
+      MainPanel.pagescreen();
+
+      // one-page
+      // 768 =  single 768px panel
+    } else if (Session.get('appWidth') > 768) {
+      //WestPanel.show();
+      MainPanel.sidebarscreen();
+
+      // mobile
+    } else {
+      //WestPanel.hide();
+      MainPanel.fullscreen();
+    }
   }
 };
 

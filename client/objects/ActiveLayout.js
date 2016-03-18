@@ -163,6 +163,9 @@ ActiveLayout = {
         if (typeof properties.defaults.fullscreenNavbarsOverride === "boolean") {
           Session.set('fullscreenNavbarsOverride', properties.defaults.fullscreenNavbarsOverride);
         }
+        if (typeof properties.defaults.fullscreenOverride === "boolean") {
+          Session.set('fullscreenOverride', properties.defaults.fullscreenOverride);
+        }
 
 
         if (typeof properties.defaults.navIsFullscreen === "boolean") {
@@ -342,19 +345,25 @@ ActiveLayout = {
    */
   getPageHeight: function (){
 
-    var pageHeight = Session.get('appHeight');
+    var pageHeight;
 
-    if (Session.get('showNavbars')) {
-      pageHeight = pageHeight - 50;
+    if (Session.get('fullscreenOverride')) {
+      pageHeight = Session.get('appHeight');
+    } else {
+      if (Session.get('showNavbars')) {
+        pageHeight = pageHeight - 50;
+      }
+
+      if (Session.get('showSearchbar')) {
+        pageHeight = pageHeight - 50;
+      }
+
+      if (Session.get('hasPageVerticalPadding')) {
+        pageHeight = pageHeight - 100;
+      }
+
     }
 
-    if (Session.get('showSearchbar')) {
-      pageHeight = pageHeight - 50;
-    }
-
-    if (Session.get('hasPageVerticalPadding')) {
-      pageHeight = pageHeight - 100;
-    }
 
     return "min-height: " + pageHeight + "px;";
   },
