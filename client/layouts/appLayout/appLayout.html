@@ -23,8 +23,8 @@
           <div id="contextTitle" class="helveticas">{{getContextTitle}}</div>
           <div class="hidden">{{resized}}</div>
 
-            <div id="mainPanel" class="helveticas layoutPanel" style="{{getTopDistance}} {{getPageWidth}} {{getPageHeight}} {{getPageColor}}">
-              <div id="contentAnimation" style="{{getPageHeight}} {{getPageWidth}}">
+            <div id="mainPanel" class="helveticas layoutPanel" style="{{getTopDistance}} {{getPageWidth}} {{getPageHeight}} {{getPageColor}} ">
+              <div id="contentAnimation" style="{{getPageHeight}} {{getPageWidth}} {{getZoom}}">
                 {{#each thisArray}}
                   {{> yield}}
                 {{/each}}

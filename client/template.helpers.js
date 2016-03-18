@@ -1,5 +1,21 @@
 
 /**
+ * @summary Get the canvas zoom level.
+ * @locus Client, Blaze Template
+ * @memberOf ActiveLayout
+ * @name {{getZoom}}
+ * @returns {String}
+ * @version 1.2.3
+ * @example
+ * ```html
+ * <div id="mainPanel" style="{{getZoom}}"></div>
+ * ```
+ */
+Template.registerHelper("getZoom", function (argument){
+  return "zoom: " + Session.get('zoom') + "%;";
+});
+
+/**
  * @summary Get the application title.
  * @locus Client, Blaze Template
  * @memberOf ActiveLayout
