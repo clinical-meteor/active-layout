@@ -343,7 +343,7 @@ Template.registerHelper("getNorthRule", function () {
 
 Template.registerHelper("getTopDistance", function () {
 
-  var topDistance;
+  var topDistance = 0;
 
   if (Session.get('fullscreenOverride')) {
     topDistance = 0;

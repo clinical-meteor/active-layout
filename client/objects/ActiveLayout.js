@@ -345,7 +345,7 @@ ActiveLayout = {
    */
   getPageHeight: function (){
 
-    var pageHeight;
+    var pageHeight = 0;
 
     if (Session.get('fullscreenOverride')) {
       pageHeight = Session.get('appHeight');
