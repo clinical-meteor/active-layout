@@ -365,7 +365,7 @@ ActiveLayout = {
     }
 
 
-    return "min-height: " + pageHeight + "px;";
+    return "height: " + pageHeight + "px; min-height: 100%;";
   },
 
   /**
