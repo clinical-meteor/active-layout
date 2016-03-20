@@ -24,6 +24,8 @@ Session.setDefault('LayoutConfig', {
     fullscreenNavbars: false,
     fullscreenNavbarsOverride: false,
     fullscreen: false,
+    paintPageBackgrounds: true,
+    paintCardBackgrounds: false,
     hasPagePadding: false,
     hasPageVerticalPadding: false,
     mainPanelIsCard: false,
@@ -182,6 +184,13 @@ ActiveLayout = {
         }
         if (typeof properties.defaults.pageWhite === "boolean") {
           Session.set('pageWhite', properties.defaults.pageWhite);
+        }
+
+        if (typeof properties.defaults.paintPageBackgrounds === "boolean") {
+          Session.set('paintPageBackgrounds', properties.defaults.paintPageBackgrounds);
+        }
+        if (typeof properties.defaults.paintCardBackgrounds === "boolean") {
+          Session.set('paintCardBackgrounds', properties.defaults.paintCardBackgrounds);
         }
       }
 

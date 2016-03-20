@@ -23,7 +23,7 @@
           <div id="contextTitle" class="helveticas">{{getContextTitle}}</div>
           <div class="hidden">{{resized}}</div>
 
-            <div id="mainPanel" class="helveticas layoutPanel" style="{{getTopDistance}} {{getPageWidth}} {{getPageHeight}} {{getPageColor}} {{getOpacity}}">
+            <div id="mainPanel" class="helveticas layoutPanel" style="{{getTopDistance}} {{getPageWidth}} {{getPageHeight}} {{getPageColor}} {{getPageOpacity}}">
               <div id="contentAnimation" style="{{getPageHeight}} {{getPageWidth}} {{getZoom}}">
                 {{#each thisArray}}
                   {{> yield}}
@@ -32,7 +32,7 @@
             </div>
 
             {{#if secondPanelEnabled}}
-              <div id="secondPanel" class="unselectable helveticas layoutPanel" style="{{getRightPanelStyle}} {{getSecondPanelWidth}} {{getSecondTopDistance}} {{getSecondPanelHeight}}">
+              <div id="secondPanel" class="unselectable helveticas layoutPanel" style="{{getRightPanelStyle}} {{getSecondPanelWidth}} {{getSecondTopDistance}} {{getSecondPanelHeight}} {{getPageOpacity}}">
                 {{> yield 'secondPage'}}
               </div>
             {{/if}}
