@@ -1,16 +1,9 @@
 Meteor.startup(function () {
-  Session.set("resize", null);
-  Session.setDefault('appHeight', $(window).height());
-  Session.setDefault('appWidth', $(window).width());
   Session.setDefault("glassOpacity", .95);
   Session.setDefault('activeRecord', null);
   Session.set('appWidth', $(window).width());
 
-  window.addEventListener('resize', function () {
-    Session.set("resize", new Date());
-    Session.set("appHeight", $(window).height());
-    Session.set("appWidth", $(window).width());
-  });
+
 
   //====================================================
   // refactor to clinical:user-model

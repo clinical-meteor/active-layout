@@ -1,6 +1,6 @@
 Package.describe({
   name: 'clinical:active-layout',
-  version: '0.7.47',
+  version: '0.7.49',
   summary: 'Universal layout with keybindings and animations.',
   git: 'http://github.com/clinical-meteor/clinical-active-layout',
   documentation: 'README.md'
@@ -24,6 +24,7 @@ Package.onUse(function (api) {
   api.use('clinical:theming@0.4.10');
   api.use('clinical:glass-ui@1.3.11');
   api.use('clinical:error-pages@0.1.1');
+  api.use('clinical:auto-resizing@0.2.0');
 
   api.imply('clinical:router');
   api.imply('clinical:extended-api');
