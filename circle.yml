@@ -53,7 +53,7 @@ dependencies:
     - cd helloworld && git clone http://github.com/clinical-meteor/active-layout packages/active-layout && meteor add clinical:active-layout
     - cd helloworld && git clone http://github.com/clinical-meteor/sidebar packages/sidebar && meteor add clinical:sidebar
 
-    - cd helloworld && meteor add anti:gagarin@0.4.11 session meteor-platform clinical:theming clinical:default-theme clinical:router clinical:router-default-config clinical:active-layout-reset clinical:active-layout-pagescreen-config grove:less
+    - cd helloworld && meteor add anti:gagarin@0.4.11 session meteor-platform clinical:theming clinical:glass-ui clinical:default-theme clinical:router clinical:router-default-config clinical:active-layout-reset clinical:active-layout-pagescreen-config grove:less
 
     - cd helloworld && starrynight scaffold --framework nightwatch
     - cp tests/nightwatch/* helloworld/tests/nightwatch/walkthroughs
