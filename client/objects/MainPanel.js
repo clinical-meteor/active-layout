@@ -12,7 +12,7 @@ MainPanel = {
     this.state = layout;
   },
   fullscreen: function(){
-    console.log('fullscreen');
+    process.env.DEBUG && console.log('fullscreen');
     this.isFullscreen = true;
     this.state = "fullscreen";
     Session.set("wideCard", true);
@@ -23,7 +23,7 @@ MainPanel = {
     //Session.set('useHorizontalFences', false);
   },
   pagescreen: function(){
-    console.log('pagescreen');
+    process.env.DEBUG && console.log('pagescreen');
     this.isFullscreen = false;
     this.state = "pagescreen";
     Session.set("wideCard", false);
@@ -35,7 +35,7 @@ MainPanel = {
     //Session.set('useHorizontalFences', true);
   },
   sidebarscreen: function(){
-    console.log('sidebarscreen');
+    process.env.DEBUG && console.log('sidebarscreen');
     this.isFullscreen = false;
     this.state = "sidebarscreen-";
     Session.set("wideCard", true);
