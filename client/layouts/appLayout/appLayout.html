@@ -10,11 +10,11 @@
     </aside>
 
     <div id="navbarLayer" style="{{appSurfaceOffset}} {{getLeftTransform}}">
-      <header id="navbarHeader" class="sidebarToggle helveticas" style="{{getOpacity}} {{getHeaderHeight}} {{getNavWidth}} {{getBackgroundColor 'colorE'}} ">
+      <header id="navbarHeader" class="sidebarToggle helveticas" style="{{getPageOpacity}} {{getHeaderHeight}} {{getNavWidth}} {{getBackgroundColor 'colorE'}} ">
         {{> yield 'header'}}
       </header>
 
-      <aside id="globalInput" class="globalInput" style="{{appSurfaceOffset}} {{getLeftTransform}} {{getOpacity}} {{getSearchStyle}} {{getNavWidth}} {{getBackgroundColor 'colorE'}}">
+      <aside id="globalInput" class="globalInput" style="{{appSurfaceOffset}} {{getLeftTransform}} {{getPageOpacity}} {{getSearchStyle}} {{getNavWidth}} {{getBackgroundColor 'colorE'}}">
         {{> yield 'globalInput' }}
       </aside>
 
@@ -51,7 +51,7 @@
         </div>
 
 
-      <footer id="navbarFooter" class="unselectable" style="{{getOpacity}} {{getFooterHeight}} {{getNavWidth}} {{getBackgroundColor 'colorE'}} ">
+      <footer id="navbarFooter" class="unselectable" style="{{getPageOpacity}} {{getFooterHeight}} {{getNavWidth}} {{getBackgroundColor 'colorE'}} ">
         {{> yield 'footer' }}
 
         {{#if showHelp}}
