@@ -1,5 +1,5 @@
 Meteor.startup(function () {
-  Session.setDefault("glassOpacity", .95);
+  Session.setDefault("glassOpacity", 1);
   Session.setDefault('activeRecord', null);
   Session.set('appWidth', $(window).width());
 
