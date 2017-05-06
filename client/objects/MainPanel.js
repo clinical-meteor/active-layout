@@ -26,7 +26,7 @@ MainPanel = {
     console.log('pagescreen');
     this.isFullscreen = false;
     this.state = "pagescreen";
-    Session.set("wideCard", false);
+    Session.set("wideCard", true);
     Session.set("useEastFence", true);
     Session.set("appSurfaceOffset", true);
     Session.set('fullscreenNavbars', false);

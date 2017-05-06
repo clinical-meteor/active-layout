@@ -39,27 +39,31 @@ dependencies:
     # Link the meteor executable into /usr/bin
     - sudo ln -s $HOME/.meteor/meteor /usr/bin/meteor
     # Check if the helloworld directory already exists, if it doesn't, create the helloworld app
-    # The following doesn't work, because it should be checking ${HOME}/active-entry/helloworld
-    # - if [ ! -e ${HOME}/helloworld ]; then meteor create --release METEOR@1.1.0.3 helloworld; else echo "helloworld app seems to be cached"; fi;
+    - if [ ! -e ${HOME}/helloworld ]; then meteor create --release METEOR@1.4.2.3 helloworld; else echo "helloworld app seems to be cached"; fi;
 
 
   override:
     # it would be nice to just set the build dir to 'helloworld', but then we don't get the different branches
     # so we just have to be a bit verbose when building our integration app
-    - meteor create --release METEOR@1.1.0.3 helloworld
+    # - meteor create --release METEOR@1.1.0.3 helloworld
     - cd helloworld
+    - cd helloworld && ls -la
+    - cd helloworld && meteor npm install
+    - cd helloworld && npm i --save-dev selenium-webdriver@3.0.0-beta-2 chromedriver
 
-    - cd helloworld && rm helloworld.*
+    - cd helloworld/client && rm main.*
+    - cd helloworld && meteor add anti:gagarin@0.4.12 session meteor-platform clinical:theming clinical:default-theme clinical:router clinical:router-default-config clinical:active-layout clinical:active-layout-reset clinical:active-layout-pagescreen-config grove:less
+
     - cd helloworld && git clone http://github.com/clinical-meteor/active-layout packages/active-layout && meteor add clinical:active-layout
     - cd helloworld && git clone http://github.com/clinical-meteor/sidebar packages/sidebar && meteor add clinical:sidebar
 
-    - cd helloworld && meteor add anti:gagarin@0.4.11 session meteor-platform clinical:theming clinical:glass-ui clinical:default-theme clinical:router clinical:router-default-config clinical:active-layout-reset clinical:active-layout-pagescreen-config grove:less
+    #- cd helloworld && starrynight scaffold --framework nightwatch
+    #- cp tests/nightwatch/* helloworld/tests/nightwatch/walkthroughs
+    #- cd helloworld && starrynight autoconfig
+    #- cd helloworld && cat .meteor/nightwatch.json
 
-    - cd helloworld && starrynight scaffold --framework nightwatch
-    - cp tests/nightwatch/* helloworld/tests/nightwatch/walkthroughs
     - cd helloworld && starrynight autoconfig
-    - cd helloworld && cat .meteor/nightwatch.json
-
+    - cd helloworld && meteor npm install
 
 ## Customize test commands
 test:
@@ -69,7 +73,7 @@ test:
     - sleep 80
   override:
     - cd helloworld && starrynight run-tests --type package-verification
-    - cd helloworld && starrynight run-tests --type validation --env travischrome
+    #- cd helloworld && starrynight run-tests --type validation --env travischrome
 
 general:
   artifacts:
